@@ -196,10 +196,10 @@ function cliencode_check() {
         window.location = "index01.html";
     }
     else {
-        var sp = clientCode.substring(0, 1);
-
-        var currentyear = currentyear.getFullYear();
-        var cy = currentyear.subs(0, 1);
+        var sp = clientCode.substring(0, 3);
+        var d = new Date();
+        var currentyear = d.getFullYear();
+        var cy = currentyear;
         if (sp == cy || preptcode==cy) {
             window.location = "Retailer.html";
         }
@@ -3526,6 +3526,7 @@ function ReOrder(VrNo) {
                 localStorage.setItem("SelectedItemIndex", "");
                 localStorage.setItem("SelectedItemInfo", "");
                 try {
+                    debugger;
                     if (data != null) {
                         if (data.imgName.trim() != "" && data.imgName != null) {
                             IsPre = '1';
