@@ -372,47 +372,88 @@ function validateEmail(emailField) {
 //}
 //ultimate change for the image
 function getimage() {
-//image 1
-    var img = document.createElement("img");
-    var api = localStorage.getItem("APIURL");
-   img.src = api+"/VrImg/img_app/002.jpg";
-   var src = document.getElementById("img01");
-   img.id = "id1";
-   src.appendChild(img);
-   document.getElementById("id1").style.width = "100%";
-   document.getElementById("id1").style.height = "100%";
-    //image 2
-   var img = document.createElement("img");
-   img.src = api+"/VrImg/img_app/003.jpg";
-   var src = document.getElementById("img02");
-   img.id = "id2";
-   src.appendChild(img);
-   document.getElementById("id2").style.width = "100%";
-   document.getElementById("id2").style.height = "100%";
-    //image 3
-   var img = document.createElement("img");
-   img.src =api+ "/VrImg/img_app/004.jpg";
-   var src = document.getElementById("img03");
-   img.id = "id3";
-   src.appendChild(img);
-   document.getElementById("id3").style.width = "100%";
-   document.getElementById("id3").style.height = "100%";
-    //image 4
-   var img = document.createElement("img");
-   img.src =api+ "/VrImg/img_app/005.jpg";
-   var src = document.getElementById("img04");
-   img.id = "id4";
-   src.appendChild(img);
-   document.getElementById("id4").style.width = "100%";
-   document.getElementById("id4").style.height = "100%";
-    //image 5
-   var img = document.createElement("img");
-   img.src = api+"/VrImg/img_app/006.jpg";
-   var src = document.getElementById("img05");
-   img.id = "id5";
-   src.appendChild(img);
-   document.getElementById("id5").style.width = "100%";
-   document.getElementById("id5").style.height = "100%";
+    var img1, img2, img3, img4, img5;
+    WebSerUrl = localStorage.getItem("APIURL");
+    $.ajax({
+        url: WebSerUrl + "/APPSETTING/GETIMAGE",
+        type: "GET",
+        cache: false,
+        success: function (data, id) {
+             debugger;
+             {
+                 debugger;
+                //localStorage.setItem("IMAGE01",data.[0]);
+                img1 = data[0].IMG1;
+               // CONVERSION_IMAGE(img01);
+                // Convert the string to bytes
+
+                img2= data[0].IMG2;
+                 img3 = data[0].IMG3;
+                 img4 = data[0].IMG4;
+                 img5 = data[0].IMG5;
+             }
+            //image 1
+
+
+             var img = document.createElement("img");
+             var api = localStorage.getItem("APIURL");
+             img.src = api + "/VrImg/img_app/" + img1 + "";
+             var src = document.getElementById("img01");
+             img.id = "id1";
+             src.appendChild(img);
+             document.getElementById("id1").style.width = "100%";
+             document.getElementById("id1").style.height = "100%";
+
+            //image 2
+
+             var img = document.createElement("img");
+             img.src = api + "/VrImg/img_app/" + img2 + "";
+             var src = document.getElementById("img02");
+             img.id = "id2";
+             src.appendChild(img);
+             document.getElementById("id2").style.width = "100%";
+             document.getElementById("id2").style.height = "100%";
+
+            //image 3
+
+             var img = document.createElement("img");
+             img.src = api + "/VrImg/img_app/" + img3 + "";
+             var src = document.getElementById("img03");
+             img.id = "id3";
+             src.appendChild(img);
+             document.getElementById("id3").style.width = "100%";
+             document.getElementById("id3").style.height = "100%";
+
+
+            //image 4
+             var img = document.createElement("img");
+             img.src = api + "/VrImg/img_app/" + img4 + "";
+             var src = document.getElementById("img04");
+             img.id = "id4";
+             src.appendChild(img);
+             document.getElementById("id4").style.width = "100%";
+             document.getElementById("id4").style.height = "100%";
+
+
+            //image 5
+             var img = document.createElement("img");
+             img.src = api + "/VrImg/img_app/" + img5 + "";
+             var src = document.getElementById("img05");
+             img.id = "id5";
+             src.appendChild(img);
+             document.getElementById("id5").style.width = "100%";
+             document.getElementById("id5").style.height = "100%";
+
+        },
+        //if any error occure
+        error: function (xmlHttpRequest, textStatus, errorThrown) {
+            console.log('some error occured', textStatus, errorThrown);
+        }
+
+    });
+   
+   
+   
     //
     //cleared chache
    //var target = $('.cached-img');
@@ -428,7 +469,7 @@ function getimage() {
    //        });
    //    }
     //});
-   flushdata(obj)
+   //flushdata(obj)
    //flushdata(obj, mode)
   }
 
