@@ -615,6 +615,7 @@ function Reset() {
 
 //To check User Register or Not
 function fun_CheckPartyReg() {
+    getimage();
     var MobileNo = $("#txt-clientMobno").val().trim();
     if (MobileNo == "" || MobileNo == null) {
         var txtClientCode = $("#txt-clientCode").val().trim();
@@ -635,7 +636,8 @@ function CheckRegCode() {
     if ($("#txt-clientCode").val() == "") {
     } else {
         localStorage.setItem("ClientCode", $("#txt-clientCode").val().trim());
-    }    
+    }
+    getimage();
     CheckPartyRegistration("0");
 }
 
@@ -643,6 +645,8 @@ function CheckRegCode() {
 function Reg_CheckOTPNo() {
     if (localStorage.getItem("randomNo") == $("#txt-clientOTP").val()) {
         localStorage.setItem("ClientCode", localStorage.getItem("CheckRegCode"));
+        onDeviceReady();
+        getimage();
         CheckRegCode();
     } else {
         alert('Please enter Correct OTP no.')
@@ -723,6 +727,7 @@ function CheckPartyRegistration(val) {
                             else {
                                 try{
                                     debugger;
+                                    getimage();
                                     var nameSer = data.split('|');                                   
                                     localStorage.setItem("PTNAME", nameSer[3]);
                                     localStorage.setItem("PTCODE", nameSer[4]);
