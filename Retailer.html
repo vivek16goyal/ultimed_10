@@ -704,7 +704,35 @@
                                 <div role="main" class="ui-content" style="overflow-x: visible; width: 90%" id="grid_Ord">
                                     <ul data-role="listview" data-inset="true" id="Itm_Grid" class="touch" data-icon="false" data-split-icon="delete"></ul>
                                 </div>
+                                <div class="ui-content" style="overflow-x: visible; width: 90%" >
+                                    
+                                <a id="emergency" onclick="ShowHide1()" style="margin-top: -30vh; margin-left: 17px; " class="ui-content"  >
+                                    <img id="Img11" src="assets/img/emeregencyclick.jpg" alt="Save" style="width:150px;height:65px">
+                                </a>
+                                    <table id="Emeregency_id" style="width: 90%; margin-left: 17px;">
 
+                                    <tr>
+                                        <td colspan="2" onclick="placed_order()">
+                                            <label>Click here to Applied Emeregency order</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="background-color:white;float :left; border-radius: 10px; box-shadow: 0px 3px 5px #bbbdbb">
+                                            <p id="P2">May be you charge some Extra with Deleviry charges</p>
+                                            <p id="P3">
+                                                You Can Cancel The Order By Clicking Below
+                                            </p>
+                                            <p id="P4" onclick="cancel_order()">
+                                                <img id="Img10" src="assets/img/cancelemer.jpg" alt="Save" style="width:150px;height:65px">
+                                                 
+                                            </p>
+                                            <p id="P5"></p>
+                                            <p id="P6"></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </div>
+                                <label id ="emeregency_cancel" style ="color:red"></label>
                                 <a id="lnk" onclick="ShowHide()" style="margin-top: -30vh; margin-left: 17px;">+Veiw/Hide Order Details..</a>
 
                                 <table id="tbl_orderDetail" style="width: 90%; margin-left: 17px;">
@@ -924,11 +952,19 @@
                         <tr>
                             <td>Genric:
                             </td>
-                            <td colspan="2">
+                            <td colspan="3">
                                 <a href="#altITem" data-transition="slidedown" onclick="SubstitudeItemList()" id="lblContent" style="margin-left: 5px;"></a>
                             </td>
                         </tr>
-
+                         <tr style="height: 10px;">
+                            <td>
+                                <p>Scheme:</p>
+                            </td>
+                            <td >
+                               <label id="sm_free" style="margin-left: 5px;" ></label>
+                            </td>
+                            
+                        </tr>
                         <tr id="row-qty">
                             <td>Qty:
                             </td>
@@ -936,7 +972,7 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            <input type="number" min="1" data-theme="a" id="txt-qty" placeholder="Qty" style="display: inline;" pattern="[0-9]" />
+                                            <input type="number" min="1" data-theme="a" id="txt-qty" placeholder="Qty" style="display: inline;" pattern="[0-9]"  onchange="toggle(this)" onkeypress="schem_calculation()"/>
 
                                         </td>
                                         <td>

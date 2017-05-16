@@ -46,6 +46,10 @@ var pDiscOnOrder = "1";
 var pWallet = "0";
 var pDiscPer = "";
 var pDocReq = "1";
+var scheme;
+var free02 = parseInt("0");
+var qty, stdt, eddt, free;
+var emrg;
 //////*********************Generlized App*****************************//////////////
 //var APPType = "@"; 
 //var Heading = "TiaERP@ConsumerApp";
@@ -472,9 +476,50 @@ function getimage() {
    //flushdata(obj)
    //flushdata(obj, mode)
   }
+//ultimate change call scheme master
+function sch_mas()
+{
+    var icode;
+    icode = scheme;
+   // var qty, free;
+    WebSerUrl = localStorage.getItem("APIURL");
+    {
+        $.ajax({
+            url: WebSerUrl + "/Values/GET_scheme?icode="+icode,
+            type: "GET",
+            cache: false,          
+            success: function (data) {
+                debugger;
+                if (data != 0) {
+                  //  qty, stdt, eddt, free
+                    qty = data[0].QTY;
+                    stdt = data[0].STARTDATE;
+                    eddt = data[0].ENDDATE;
+                    free = data[0].FREE;
+                        $("sm_free").text( "For" + qty + "We Have" + free + "free");
+                    }
+                    else {
+                        $("sm_free").text("No Scheme Available");
+                    }
+                // $("#lblRetailrate")
+                if (data ==0)
+                {
+                    $("#sm_free").text("No scheme available");
+                    qty = "";
+                } else {
+                    $("#sm_free").text("For " + qty + " ITEM We Have " + free + " free");
+                }
+            }
+              
+        });
+       
+    }
+    
+  
 
+}
 function SendLedgerEmail() {
-    var pcode = "A10000";
+    var pcode = localStorage.getItem("PTCODE");
     var frmdate = $("#frmdt_ldg1").val();//CHANGE BY VIVEK TEMPIRARY
     var todate = $("#todt_ldg1").val();
     //var todate=null;
@@ -2498,6 +2543,47 @@ function FullSize() {
 function ShowErrorFromServer(err) {
     alert("Error Occured! Structur Rebuild Required! If problem not Solved, Contact with Administrator. \n" + err);
 }
+//schewm master calculation
+function toggle(element) {
+   // if (element.value == '1')
+    {
+        debugger;
+        if (qty == "") { }
+        else {
+            var qty_sh = parseInt(element.value);
+            {
+                if (qty_sh >= qty) {
+
+                    var count = free02 + parseInt(free);
+                    free02 = count;
+                    $("#txt-free").val(free02);
+                    //parseInt(qty_sh) - parseInt(qty);
+                    qty_sh = parseInt(qty_sh) - parseInt(qty);
+                    // toggle(element);
+                    schem_calculation(qty_sh)
+                    // schem_calculation();
+                }
+            }
+        }
+    }
+    
+}
+function schem_calculation(qty_sh)
+{
+   // var qty_sh = $("#txt-qty").val();
+    if (qty_sh>=qty)
+    {
+       
+        var count = parseInt(free02) + parseInt(free);
+        free02 = count;
+        $("#txt-free").val(free02);
+        qty_sh = parseInt(qty_sh) - parseInt(qty);
+        schem_calculation(qty_sh);
+    }
+    free02 = "0";
+    //qty = "0";
+    //qty_sh = "0";
+}
 
 ///////////**********Item Search*******************//////////////////
 $(function () {
@@ -2513,6 +2599,7 @@ $(function () {
                     dataType: "json",
                     cache: false,
                     success: function (data) {
+                       // debugger;
                         response($.map(data, function (item, id) {
                             if (item.INAME.indexOf("$") == 0) {
                                 ShowErrorFromServer(item.INAME);
@@ -2529,7 +2616,7 @@ $(function () {
                                 WRate: item.WRate,
                                 localrate:item.LOCALPRICE
                             }
-                          
+                           
                             return mydata;
                         }));
                     },
@@ -2568,14 +2655,17 @@ $(function () {
                     $("#lblRate").text(ui.item.WRate);
                   
                 }
-                
+               // debugger;
+                scheme= ui.item.Icode;
                 $("#localrate").text(ui.item.localrate);
                 $("#lblItmCode").text(ui.item.Icode);
                 $("#lblItmMRP").text(ui.item.Mrp);
                 $("#lblItmName").text(ui.item.label);
                 $("#PackExp").text(ui.item.packing);
                 $("#lblContent").text(ui.item.GNAME);                
-                fun_showItmInfo("#");                
+                fun_showItmInfo("#");
+                sch_mas();
+                getimage();
             },
             close: function () {
             },
@@ -2599,7 +2689,10 @@ function ClearItemInfo() {
     $("#lblItmMRP").text("");
     $("#lblItmName").text("");
     $("#PackExp").text("");
-    $("#itm-srch").val("");
+   $("#sm_free").text("");
+
+    
+    
 }
 
 function fun_showItmInfo(id) {   
@@ -2617,6 +2710,7 @@ function fun_showItmInfo(id) {
     $("#txt-qty").focus();
     SetItem_Count();
     $("#a_Item-Info-Search-Body").click();
+    
 }
 
 var isupdate = '0';
@@ -3222,7 +3316,8 @@ function getUserDataForOrderPlace(val) {
             "DrName": dname,
             "DrAddr": dadd,
             "FDName": Fdname,
-            "series": series
+            "series": series,
+            "EMGORD": emrg
         };
         return data;
     }
@@ -3237,7 +3332,8 @@ function getUserDataForOrderPlace(val) {
             "DrName": dname,
             "DrAddr": dadd,
             "FDName": Fdname,
-            "series": series
+            "series": series,
+            "EMGORD":emrg
         };
         return data;
     }
@@ -3261,7 +3357,14 @@ function getArrayOfOrder() {
         alert(e);
     }
 }
+function cancel_order()
+{
+    emrg = "";
+  //  $("#ordSaveprog").show();
+    $("#emeregency_cancel").text("Emeregency Order Cancel");
 
+
+}
 function SetVrDeetail(vrno, TotalAmt, pcode, data) {
     try {
         ShowMsgOrdSave();
@@ -3311,6 +3414,11 @@ function SetVrDeetail(vrno, TotalAmt, pcode, data) {
 
 function ShowHide() {
     $("#tbl_orderDetail").toggle(200);
+}
+function ShowHide1() {
+    $("#Emeregency_id").toggle();
+    emrg = "E";
+    $("#emeregency_cancel").text("Emeregency Order Applied");
 }
 
 function fun_cancelOrder() {
