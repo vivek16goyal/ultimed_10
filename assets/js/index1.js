@@ -2689,7 +2689,9 @@ function ClearItemInfo() {
     $("#lblItmMRP").text("");
     $("#lblItmName").text("");
     $("#PackExp").text("");
-   $("#sm_free").text("");
+    $("#sm_free").text("");
+    $("#itm-srch").val("");
+    $("#itm-srch").text("");
 
     
     
