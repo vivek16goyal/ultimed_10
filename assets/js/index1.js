@@ -2691,7 +2691,9 @@ function new_item()
    //Qty = $("#txt-qty").val();
    //free = $("#txt-free").val();
   // Icode = $("#lblItmCode").text();
-  // Iname = $("#lblItmName").text();
+    // Iname = $("#lblItmName").text();
+   sm_free
+   $("#sm_free").text("NUll ");
    $("#lblItmMRP").text("0");
    $("#PackExp").text("0");
     $("#lblRetailrate").text("0");

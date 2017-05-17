@@ -72,7 +72,12 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>-->
-
+  <uses-permission name="android.permission.INTERNET" />
+  <uses-permission name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission name="android.permission.WAKE_LOCK" />
+  <uses-permission name="android.permission.READ_CONTACTS" />
+  <uses-permission name="android.permission.SEND_SMS" />
+  <uses-permission name="android.permission.READ_PHONE_STATE" />
   <icon src="uLTIMED.png"/>
   <access origin="*"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
