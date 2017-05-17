@@ -36,7 +36,7 @@ var APPType = "$";
 
 //  3)///////*******A to Z Dava [Demo Version Given To Drug Deal] **********************//////////
 var Heading = "ULTIMED";
-var PCODE = "dem001";
+var PCODE = "DEM001";
 var folderPathImg = "file:///storage/sdcard0/" + PCODE + "/";
 var DownloadPath = "file:///storage/sdcard0/";
 var FolderName = PCODE;
@@ -1239,6 +1239,7 @@ function SetDocName(flag) {
         localStorage.setItem("DocName", $('#pro_txtDocname').val());
     }
 }
+
 //ULTIMED SWIPE
 //var obj = document.getElementById('Item-grid-table');
 //obj.addEventListener('touchmove', function (event) {
@@ -2681,7 +2682,23 @@ $(function () {
     } catch (err) {
     }
 });
-
+//ultimate new item
+function new_item()
+{
+   var new_item= $("#itm-srch").val();
+   $("#lblItmName").text(new_item);
+   $("#lblItmCode").text("ZZZZZZ");
+   //Qty = $("#txt-qty").val();
+   //free = $("#txt-free").val();
+  // Icode = $("#lblItmCode").text();
+  // Iname = $("#lblItmName").text();
+   $("#lblItmMRP").text("0");
+   $("#PackExp").text("0");
+    $("#lblRetailrate").text("0");
+   $("#lblRate").text("0");
+   $("#lblContent").text("0");
+    fun_showItmInfo("#");
+}
 function ClearItemInfo() {
     $("#lblRetailrate").text('');
     $("#lblRate").text('');
