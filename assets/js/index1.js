@@ -2957,18 +2957,31 @@ function fun_nextItem() {
 function fun_showCart() {
     fun_AddItemInCart();
     var smallImage = document.getElementById('sel_image');
-    var image = smallImage.src;
-    if (smallImage.src.indexOf("No_image.png") < 0) {        
-        document.getElementById("cart-pre").src = image;
-        $("#cart-pre").show();
-        $("#lbl-cart-pre").show();
-    } else {
-        $("#cart-pre").hide();
-        $("#lbl-cart-pre").hide();
-    }
+    multimplyimage();
+    //var image = smallImage.src;
+    //if (smallImage.src.indexOf("No_image.png") < 0) {        
+    //    document.getElementById("cart-pre").src = image;
+    //    $("#cart-pre").show();
+    //    $("#lbl-cart-pre").show();
+    //} else {
+    //    $("#cart-pre").hide();
+    //    $("#lbl-cart-pre").hide();
+    //}
     window.location.href = "#Item-cart";
 }
 
+//multiply images for the ultimate
+function multimplyimage()
+{
+    var smallImage = document.getElementById('sel_image');
+    $("#cart-pre").html("");
+    for (var i = 1; i <= 5; i++) {
+        $("#cart-pre").append(
+        "<img  src=" + smallImage + " alt='NoImage' onclick='FullSize()'  id=" + i + "/>"
+
+        )
+    }
+}
 function fun_AddItemInCart() {
     var Total = 0;
     var arr = '';
