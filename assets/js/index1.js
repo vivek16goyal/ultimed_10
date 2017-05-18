@@ -2984,7 +2984,7 @@ function multimplyimage()
     $("#cart-pre").hide();
     $("#lbl-cart-pre").hide()
     var image = smallImage.src;
-  //  if (smallImage.src.indexOf("No_image.png") < 0) 
+  if (smallImage.src.indexOf("No_image.png") < 0) 
     //{
     //    $("#cart-pre").show();
     //     $("#lbl-cart-pre").show();
