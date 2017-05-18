@@ -2979,8 +2979,8 @@ function multimplyimage()
     var image = smallImage.src;
     if (smallImage.src.indexOf("No_image.png") < 0) {
         $("#cart-pre").show();
-        $("#lbl-cart-pre").show();
-        var count = "0";
+         $("#lbl-cart-pre").show();
+        var count = parseint("0");
         $("#cart-pre").html("");
         for (var i = 0; i <= count; i++) {
             $("#cart-pre").append(
