@@ -2368,7 +2368,21 @@ function onPhotoURISuccess(imageURI) {  ///////////
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;    
     document.getElementById('Img16').src = imageURI;
-    localStorage.setItem("ImagePath", imageURI);
+    if (count == 0) {
+        localStorage.setItem("ImagePath", imageURI);
+    }
+    if (count == 1) {
+        localStorage.setItem("ImagePath1", imageURI);
+    }
+    if (count == 2) {
+        localStorage.setItem("ImagePath2", imageURI);
+    }
+    if (count == 3) {
+        localStorage.setItem("ImagePath3", imageURI);
+    }
+    if (count == 4) {
+        localStorage.setItem("ImagePath4", imageURI);
+    }
 }
 
 
@@ -2378,7 +2392,21 @@ function onPhotoDataSuccess(imageURI) {  ///////////////
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;    
     document.getElementById('Img16').src = imageURI;
-    localStorage.setItem("ImagePath", imageURI);
+    if (count == 1) {
+        localStorage.setItem("ImagePath", imageURI);
+    }
+    if (count == 2) {
+        localStorage.setItem("ImagePath1", imageURI);
+    }
+    if (count == 3) {
+        localStorage.setItem("ImagePath2", imageURI);
+    }
+    if (count == 4) {
+        localStorage.setItem("ImagePath3", imageURI);
+    }
+    if (count == 5) {
+        localStorage.setItem("ImagePath4", imageURI);
+    }
     //movePic(imageURI);
 }
 
@@ -3060,7 +3088,11 @@ function multimplyimage()
           //  document.getElementById("im5").style.width = "100%";
            // document.getElementById("im5").style.height = "100%";
         }
-    }
+  }
+  if (count == 5)
+  {
+      count = 0;
+  }
   
 }
 function fun_AddItemInCart() {
@@ -3365,8 +3397,25 @@ function SaveOrder() {
                             var smallImage = document.getElementById('sel_image');
                             var image = smallImage.src;
                             if (smallImage.src.indexOf("No_image.png") < 0) {
+                                //image 1
                                 var imageURI = localStorage.getItem("ImagePath");
-                                filename = send(imageURI, data.vrno, "");                          
+                                filename = send(imageURI, data.vrno, "");
+                                //image 2
+                                var imageURI = localStorage.getItem("ImagePath1");
+                                var vrno1 = data.vrno + "_01";
+                                filename = send(imageURI, vrno1, "");
+                                //image 3
+                                var imageURI = localStorage.getItem("ImagePath2");
+                                var vrno2 = data.vrno + "_02";
+                                filename = send(imageURI, vrno2, "");
+                                //image 4
+                                var imageURI = localStorage.getItem("ImagePath3");
+                                var vrno3 = data.vrno + "_03";
+                                filename = send(imageURI, vrno3, "");
+                                //image 5
+                                var imageURI = localStorage.getItem("ImagePath4");
+                                var vrno4 = data.vrno + "_04";
+                                filename = send(imageURI, vrno4, "");
                             }
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
