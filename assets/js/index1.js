@@ -2500,7 +2500,13 @@ function Receive(filename) {
                             function (entry) {
                                 //document.getElementById(imgId).src = DownloadPath;                                
                                 document.getElementById('Img16').src = DownloadPath;
-                                document.getElementById('cart-pre').src = DownloadPath;
+                                //  document.getElementById('cart-pre').src = DownloadPath;
+                                document.getElementById('img1').src = DownloadPath;
+                                document.getElementById('img2').src = DownloadPath;
+                                document.getElementById('img3').src = DownloadPath;
+
+                                document.getElementById('img4').src = DownloadPath;
+                                document.getElementById('img5').src = DownloadPath;
                                 document.getElementById('sel_image').src = DownloadPath;
                                 localStorage.setItem("ImagePath", DownloadPath);
                                 fun_showCart();
@@ -2997,7 +3003,8 @@ function multimplyimage()
     //    count = parseInt(count) + 1;
     //}
     //image 1
-    if (smallImage.src.indexOf("No_image.png") < 0) {
+    //  if (smallImage.src.indexOf("No_image.png") < 0) 
+    {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
         count = parseInt(count) + 1;
@@ -3008,8 +3015,8 @@ function multimplyimage()
             var src = document.getElementById("img1");
             img.id = "im1";
             src.appendChild(img);
-            document.getElementById("im1").style.width = "100%";
-            document.getElementById("im1").style.height = "100%";
+           // document.getElementById("im1").style.width = "100%";
+            //document.getElementById("im1").style.height = "100%";
         }
         //image 2
         if (count == 2) {
@@ -3018,8 +3025,8 @@ function multimplyimage()
             var src = document.getElementById("img2");
             img.id = "im2";
             src.appendChild(img);
-            document.getElementById("im2").style.width = "100%";
-            document.getElementById("im2").style.height = "100%";
+           // document.getElementById("im2").style.width = "100%";
+           // document.getElementById("im2").style.height = "100%";
         }
         //image 3
         if (count == 3) {
@@ -3028,8 +3035,8 @@ function multimplyimage()
             var src = document.getElementById("img3");
             img.id = "im3";
             src.appendChild(img);
-            document.getElementById("im3").style.width = "100%";
-            document.getElementById("im3").style.height = "100%";
+          //  document.getElementById("im3").style.width = "100%";
+           // document.getElementById("im3").style.height = "100%";
         }
 
         //image 4
@@ -3039,8 +3046,8 @@ function multimplyimage()
             var src = document.getElementById("img4");
             img.id = "im4";
             src.appendChild(img);
-            document.getElementById("im4").style.width = "100%";
-            document.getElementById("im4").style.height = "100%";
+           // document.getElementById("im4").style.width = "100%";
+            //document.getElementById("im4").style.height = "100%";
         }
 
         //image 5
@@ -3050,8 +3057,8 @@ function multimplyimage()
             var src = document.getElementById("img5");
             img.id = "im5";
             src.appendChild(img);
-            document.getElementById("im5").style.width = "100%";
-            document.getElementById("im5").style.height = "100%";
+          //  document.getElementById("im5").style.width = "100%";
+           // document.getElementById("im5").style.height = "100%";
         }
     }
   
