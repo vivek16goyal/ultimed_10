@@ -52,6 +52,7 @@ var qty, stdt, eddt, free;
 var emrg;
 var incre = "0";
 var Remark = "";
+var count = parseInt("0");
 //////*********************Generlized App*****************************//////////////
 //var APPType = "@"; 
 //var Heading = "TiaERP@ConsumerApp";
@@ -2977,18 +2978,16 @@ function multimplyimage()
     $("#cart-pre").hide();
     $("#lbl-cart-pre").hide()
     var image = smallImage.src;
-  //  if (smallImage.src.indexOf("No_image.png") < 0) 
+    if (smallImage.src.indexOf("No_image.png") < 0) 
     {
-        //$("#cart-pre").show();
+        $("#cart-pre").show();
          $("#lbl-cart-pre").show();
-         var count = parseInt("0");
+        
         $("#cart-pre").html("");
         for (var i = 0; i <= count; i++) {
             $("#cart-pre").append(
-                "<li id=" + i + ">"+
-                "<img  src=" + image + "  onclick='FullSize()' />"+
-                "</li>"
-            
+                
+            "<img  src=" + image + "  onclick='FullSize()'  id=" + i + "/>"
 
             )
            
