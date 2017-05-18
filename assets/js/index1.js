@@ -2974,10 +2974,11 @@ function fun_showCart() {
 function multimplyimage()
 {
     var smallImage = document.getElementById('sel_image');
+    var image = smallImage.src;
     $("#cart-pre").html("");
     for (var i = 1; i <= 5; i++) {
         $("#cart-pre").append(
-        "<img  src=" + smallImage + " alt='NoImage' onclick='FullSize()'  id=" + i + "/>"
+        "<img  src=" + image + "  onclick='FullSize()'  id=" + i + "/>"
 
         )
     }
