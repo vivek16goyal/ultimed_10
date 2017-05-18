@@ -2986,8 +2986,10 @@ function multimplyimage()
         $("#cart-pre").html("");
         for (var i = 0; i <= count; i++) {
             $("#cart-pre").append(
-                
-            "<img  src=" + image + "  onclick='FullSize()'  id=" + i + "/>"
+                "<li id=" + i + ">" +
+                "<img  src=" + image + "  onclick='FullSize()'  />" +
+            "</li>"
+            
 
             )
            
