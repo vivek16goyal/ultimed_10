@@ -3402,22 +3402,22 @@ function SaveOrder() {
                                 var imageURI = localStorage.getItem("ImagePath");
                                 filename = send(imageURI, data.vrno, "");
                                 //image 2
-                                var imageURI = localStorage.getItem("ImagePath1");
+                                var imageURI1 = localStorage.getItem("ImagePath1");
                                 var vrno1 = data.vrno ;
                                 var vr = vrno1 + "_01";
-                                filename = send(imageURI, data.vrno, "");
+                                filename = send(imageURI1, data.vrno, "");
                                 //image 3
-                                var imageURI = localStorage.getItem("ImagePath2");
+                                var imageURI2 = localStorage.getItem("ImagePath2");
                                 var vrno2 = data.vrno + "_02";
-                                filename = send(imageURI, data.vrno, "");
+                                filename = send(imageURI2, data.vrno, "");
                                 //image 4
-                                var imageURI = localStorage.getItem("ImagePath3");
+                                var imageURI3 = localStorage.getItem("ImagePath3");
                                 var vrno3 = data.vrno + "_03";
-                                filename = send(imageURI, data.vrno, "");
+                                filename = send(imageURI3, data.vrno, "");
                                 //image 5
-                                var imageURI = localStorage.getItem("ImagePath4");
+                                var imageURI4 = localStorage.getItem("ImagePath4");
                                 var vrno4 = data.vrno + "_04";
-                                filename = send(imageURI, data.vrno, "");
+                                filename = send(imageURI4, data.vrno, "");
                             }
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
