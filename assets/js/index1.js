@@ -3012,7 +3012,7 @@ function multimplyimage()
     $("#cart-pre").hide();
     $("#lbl-cart-pre").hide()
     var image = smallImage.src;
-  if (smallImage.src.indexOf("No_image.png") < 0) 
+//  if (smallImage.src.indexOf("No_image.png") < 0) 
     //{
     //    $("#cart-pre").show();
     //     $("#lbl-cart-pre").show();
@@ -3031,7 +3031,7 @@ function multimplyimage()
     //    count = parseInt(count) + 1;
     //}
     //image 1
-    //  if (smallImage.src.indexOf("No_image.png") < 0) 
+     if (smallImage.src.indexOf("No_image.png") < 0) 
     {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
@@ -3393,6 +3393,7 @@ function SaveOrder() {
                             ShowErrorFromServer(data.pcode);
                         }
                         else {
+                            debugger;
                             var filename = "";
                             var smallImage = document.getElementById('sel_image');
                             var image = smallImage.src;
@@ -3402,20 +3403,21 @@ function SaveOrder() {
                                 filename = send(imageURI, data.vrno, "");
                                 //image 2
                                 var imageURI = localStorage.getItem("ImagePath1");
-                                var vrno1 = data.vrno + "_01";
-                                filename = send(imageURI, vrno1, "");
+                                var vrno1 = data.vrno ;
+                                var vr = vrno1 + "_01";
+                                filename = send(imageURI, data.vrno, "");
                                 //image 3
                                 var imageURI = localStorage.getItem("ImagePath2");
                                 var vrno2 = data.vrno + "_02";
-                                filename = send(imageURI, vrno2, "");
+                                filename = send(imageURI, data.vrno, "");
                                 //image 4
                                 var imageURI = localStorage.getItem("ImagePath3");
                                 var vrno3 = data.vrno + "_03";
-                                filename = send(imageURI, vrno3, "");
+                                filename = send(imageURI, data.vrno, "");
                                 //image 5
                                 var imageURI = localStorage.getItem("ImagePath4");
                                 var vrno4 = data.vrno + "_04";
-                                filename = send(imageURI, vrno4, "");
+                                filename = send(imageURI, data.vrno, "");
                             }
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
