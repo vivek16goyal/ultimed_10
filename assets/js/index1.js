@@ -2977,15 +2977,18 @@ function multimplyimage()
     $("#cart-pre").hide();
     $("#lbl-cart-pre").hide()
     var image = smallImage.src;
-    if (smallImage.src.indexOf("No_image.png") < 0) 
+  //  if (smallImage.src.indexOf("No_image.png") < 0) 
     {
-        $("#cart-pre").show();
+        //$("#cart-pre").show();
          $("#lbl-cart-pre").show();
          var count = parseInt("0");
         $("#cart-pre").html("");
         for (var i = 0; i <= count; i++) {
             $("#cart-pre").append(
-            "<img  src=" + image + "  onclick='FullSize()'  id=" + i + "/>"
+                "<li id=" + i + ">"+
+                "<img  src=" + image + "  onclick='FullSize()' />"+
+                "</li>"
+            
 
             )
            
