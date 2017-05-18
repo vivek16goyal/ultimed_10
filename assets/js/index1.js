@@ -2974,13 +2974,21 @@ function fun_showCart() {
 function multimplyimage()
 {
     var smallImage = document.getElementById('sel_image');
+    $("#cart-pre").hide();
+    $("#lbl-cart-pre").hide()
     var image = smallImage.src;
-    $("#cart-pre").html("");
-    for (var i = 1; i <= 5; i++) {
-        $("#cart-pre").append(
-        "<img  src=" + image + "  onclick='FullSize()'  id=" + i + "/>"
+    if (smallImage.src.indexOf("No_image.png") < 0) {
+        $("#cart-pre").show();
+        $("#lbl-cart-pre").show();
+        var count = "0";
+        $("#cart-pre").html("");
+        for (var i = 0; i <= count; i++) {
+            $("#cart-pre").append(
+            "<img  src=" + image + "  onclick='FullSize()'  id=" + i + "/>"
 
-        )
+            )
+            count = parseint(count) + 1;
+        }
     }
 }
 function fun_AddItemInCart() {
