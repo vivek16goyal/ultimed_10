@@ -2392,19 +2392,19 @@ function onPhotoDataSuccess(imageURI) {  ///////////////
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;    
     document.getElementById('Img16').src = imageURI;
-    if (count == 1) {
+    if (count == 0) {
         localStorage.setItem("ImagePath", imageURI);
     }
-    if (count == 2) {
+    if (count == 1) {
         localStorage.setItem("ImagePath1", imageURI);
     }
-    if (count == 3) {
+    if (count == 2) {
         localStorage.setItem("ImagePath2", imageURI);
     }
-    if (count == 4) {
+    if (count == 3) {
         localStorage.setItem("ImagePath3", imageURI);
     }
-    if (count == 5) {
+    if (count == 4) {
         localStorage.setItem("ImagePath4", imageURI);
     }
     //movePic(imageURI);
