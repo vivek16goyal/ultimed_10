@@ -36,7 +36,7 @@ var APPType = "$";
 
 //  3)///////*******A to Z Dava [Demo Version Given To Drug Deal] **********************//////////
 var Heading = "ULTIMED";
-var PCODE = "DEM001";
+var PCODE = "ndcda";
 var folderPathImg = "file:///storage/sdcard0/" + PCODE + "/";
 var DownloadPath = "file:///storage/sdcard0/";
 var FolderName = PCODE;
@@ -50,6 +50,8 @@ var scheme;
 var free02 = parseInt("0");
 var qty, stdt, eddt, free;
 var emrg;
+var incre = "0";
+var Remark = "";
 //////*********************Generlized App*****************************//////////////
 //var APPType = "@"; 
 //var Heading = "TiaERP@ConsumerApp";
@@ -2687,11 +2689,14 @@ function new_item()
 {
    var new_item= $("#itm-srch").val();
    $("#lblItmName").text(new_item);
-   $("#lblItmCode").text("ZZZZZZ");
+
+   var in_item = parseInt(incre) + 1;
+   $("#lblItmCode").text("ZZZZ" + in_item);
    //Qty = $("#txt-qty").val();
    //free = $("#txt-free").val();
   // Icode = $("#lblItmCode").text();
     // Iname = $("#lblItmName").text();
+   incre = in_item;
    sm_free
    $("#sm_free").text("NUll ");
    $("#lblItmMRP").text("0");
@@ -2815,6 +2820,7 @@ function InsertDataToarray() {
     var IndexAtFound = null;
     var gname;
     var WRate;
+  //  var Remark = "";
     var indexInArray = '';
     var SelectedId = localStorage.getItem("SelectedItemIndex");
     localStorage.setItem("SelectedItemIndex", "");
@@ -2823,7 +2829,16 @@ function InsertDataToarray() {
     Qty = $("#txt-qty").val();
     free = $("#txt-free").val();
     Icode = $("#lblItmCode").text();
-    Iname = $("#lblItmName").text();
+    var icode1 = Icode.substring(0, 4);
+    if (icode1 == "ZZZZ") {
+        Remark = $("#lblItmName").text();
+        Iname = "";
+    }
+    else {
+        Remark = "";
+        Iname = $("#lblItmName").text();
+    }
+    //Iname = $("#lblItmName").text();
     MRP = $("#lblItmMRP").text();
     Packing = $("#PackExp").text();
     Rate = $("#lblRetailrate").text();
@@ -2874,7 +2889,8 @@ function InsertDataToarray() {
         "Qty": Qty.trim(),
         "free": free.trim(),
         "GNAMe": gname.trim(),
-        "WRate": WRate.trim()
+        "WRate": WRate.trim(),
+        "Remark":Remark.trim()
     }
 
     var Itemdata = JSON.stringify(ItemInfo);
@@ -2975,6 +2991,7 @@ function fun_AddItemInCart() {
                                "<a href='#Item-Info-Search-Body'  class='ui-btn' >" +
                                     "<label style='float:right;font-size:13px;background-color:#137ab0;color:white;padding:3px;font-weight:lighter;'>" + data.MRP + "</label>" +
                                     "<p style='color:#137ab0;font-size:13px;font-weight:bold'>" + data.Iname + "</p>" +
+                                     "<p style='color:#137ab0;font-size:13px;font-weight:bold'>" + data.Remark + "</p>" +
                                     "<p style='display:inline;float:left ;font-weight:bold;margin-top:3px;margin-top:-3px;'>[" + data.Qty + "+" + data.free + "]</p> " +
                                     "<p style='display:inline;float:left ;margin-top:3px;margin-top:-3px;'>&nbsp;*&nbsp;</p>" +
                                     "<p style='display:inline;float:left ;font-weight:bold;margin-top:3px;margin-top:-3px;'>" + data.WRate + "</p>" +
@@ -3186,6 +3203,7 @@ $(function () {
 
 function chenregistration()
 {
+    incre = "0";
     var ptco= localStorage.getItem("PTCODE");
     var code=ptco.substring(0,4);
     now = new Date;
@@ -3311,6 +3329,7 @@ function SaveOrderinGBC(vrno, name, amt) {
     });
 }
 function getUserDataForOrderPlace(val) {
+   // var Remark =Remark;
     var pcode;
     var series;
     var pname, ptcode, dname, dcode, dadd;
@@ -3338,7 +3357,9 @@ function getUserDataForOrderPlace(val) {
             "DrAddr": dadd,
             "FDName": Fdname,
             "series": series,
-            "EMGORD": emrg
+            "EMGORD": emrg,
+            "Remark": Remark
+            
         };
         return data;
     }
@@ -3354,7 +3375,8 @@ function getUserDataForOrderPlace(val) {
             "DrAddr": dadd,
             "FDName": Fdname,
             "series": series,
-            "EMGORD":emrg
+            "EMGORD": emrg,
+              "Remark": Remark
         };
         return data;
     }
