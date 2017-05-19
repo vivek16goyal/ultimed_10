@@ -2506,7 +2506,7 @@ function send(imageURI, fileName, val) {
     //movePic(imageURI);
     var options = new FileUploadOptions();
     options.fileKey = "file";
-    options.fileName = fileName //imageURI.substr(imageURI.lastIndexOf('/') + 1);
+    options.fileName = fileName; //imageURI.substr(imageURI.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
     options.chunkedMode = false;
     options.headers = {
@@ -2524,7 +2524,8 @@ function send(imageURI, fileName, val) {
     }
     var ft = new FileTransfer();
     ft.upload(imageURI, encodeURI(WebSerUrl + "/upload/Post"), win, fail, options);
-    if (val != "GBC") {
+    if (val != "GBC")
+    {
         ft.upload(imageURI, encodeURI(WebSerUrl + "/upload/PostInside"), win, fail, options);
     }
     return fileName;
@@ -3050,7 +3051,7 @@ function multimplyimage(imageURI)
     //    count = parseInt(count) + 1;
     //}
     //image 1
-   //  if (smallImage.src.indexOf("No_image.png") < 0) 
+   if (smallImage.src.indexOf("No_image.png") < 0) 
     {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
@@ -3371,8 +3372,14 @@ else
 function SaveOrder() {    
     //loadmsg = "Saving Data...";
     // $(".show-page-loading-msg").click();
-   
+    document.getElementById('Img1').src = "";
+    document.getElementById('Img2').src = "";
+    document.getElementById('Img3').src = "";
 
+    document.getElementById('Img4').src = "";
+    document.getElementById('Img5').src = "";
+    //img.src = api + "/VrImg/img_app/" + img1 + "";
+    //         var src = document.getElementById("img01");
 
     if ($("#del-area").val().trim() == "" || $("#del-area").val() == "null") {
         $("#a-msg").show();
@@ -3426,25 +3433,29 @@ function SaveOrder() {
                                 //var imageURI = "assets/img/No_image.png";
                                 //filename = send(imageURI, data.vrno, "");
                                 //SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+
                                 ////image 2
                                 //var imageURI1 = localStorage.getItem("ImagePath1");
                                 //var vrno1 = data.vrno ;
                                 //var vr = vrno1 + "_01";
                                 //filename1 = send(imageURI1, data.vrno, "");
                                 //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
+
                                 ////image 3
                                 //var imageURI2 = localStorage.getItem("ImagePath2");
                                 //var vrno2 = data.vrno + "_02";
                                 //filename2 = send(imageURI2, data.vrno, "");
                                 //SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
+
                                 ////image 4
                                 //var imageURI3 = localStorage.getItem("ImagePath3");
                                 //var vrno3 = data.vrno + "_03";
                                 //filename3 = send(imageURI3, data.vrno, "");
                                 //SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
+
                                 //image 5
                                 var imageURI4 = localStorage.getItem("ImagePath4");
-                                var vrno4 = data.vrno + "_04";
+                                //var vrno4 = data.vrno + "_04";
                                 filename4 = send(imageURI4, data.vrno, "");
                                 SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                             }
