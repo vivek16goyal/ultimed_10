@@ -636,6 +636,12 @@ function BackButton() {
 }
 
 function Reload() {
+    document.getElementById('Img15').src = "";
+
+    document.getElementById('Img16').src = "";
+    document.getElementById('Img19').src = "";
+    document.getElementById('Img20').src = "";
+    document.getElementById('Img21').src = "";
     window.location.href = "#page-con";
     window.location.reload();
 }
