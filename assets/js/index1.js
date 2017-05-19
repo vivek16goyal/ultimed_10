@@ -3399,34 +3399,38 @@ function SaveOrder() {
                             var filename = "";
                             var smallImage = document.getElementById('sel_image');
                             var image = smallImage.src;
+                            var vrno_temp = {
+                                vrno:data.vrno+'_01'
+                            }
                             if (smallImage.src.indexOf("No_image.png") < 0) {
                                 //image 1
                                 var imageURI = localStorage.getItem("ImagePath");
                                 filename = send(imageURI, data.vrno, "");
+                                SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                                 //image 2
                                 var imageURI1 = localStorage.getItem("ImagePath1");
                                 var vrno1 = data.vrno ;
                                 var vr = vrno1 + "_01";
                                 filename1 = send(imageURI1, data.vrno, "");
+                                SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
                                 //image 3
                                 var imageURI2 = localStorage.getItem("ImagePath2");
                                 var vrno2 = data.vrno + "_02";
                                 filename2 = send(imageURI2, data.vrno, "");
+                                SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
                                 //image 4
                                 var imageURI3 = localStorage.getItem("ImagePath3");
                                 var vrno3 = data.vrno + "_03";
                                 filename3 = send(imageURI3, data.vrno, "");
+                                SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
                                 //image 5
                                 var imageURI4 = localStorage.getItem("ImagePath4");
                                 var vrno4 = data.vrno + "_04";
                                 filename4 = send(imageURI4, data.vrno, "");
+                                SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                             }
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
-                            SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
-                            SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
-                            SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
-                            SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                             SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
                             var vrno = data.vrno;
                             setTimeout(function abc() {
