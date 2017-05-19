@@ -2370,20 +2370,25 @@ function onPhotoURISuccess(imageURI) {  ///////////
     count = count + 1;
     if (count == 1) {
         document.getElementById('Img16').src = imageURI;
+        localStorage.setItem("ImagePath", imageURI);
     }
     if (count == 2) {
         document.getElementById('Img15').src = imageURI;
+        localStorage.setItem("ImagePath1", imageURI);
     }
     if (count == 3) {
         document.getElementById('Img19').src = imageURI;
+        localStorage.setItem("ImagePath2", imageURI);
     }
     if (count == 4) {
         document.getElementById('Img20').src = imageURI;
+        localStorage.setItem("ImagePath3", imageURI);
     }
     if (count == 5) {
         document.getElementById('Img21').src = imageURI;
+        localStorage.setItem("ImagePath4", imageURI);
     }
-        localStorage.setItem("ImagePath", imageURI);
+       // localStorage.setItem("ImagePath", imageURI);
     
    
 }
@@ -3036,7 +3041,7 @@ function multimplyimage(imageURI)
     //    count = parseInt(count) + 1;
     //}
     //image 1
-     if (smallImage.src.indexOf("No_image.png") < 0) 
+   //  if (smallImage.src.indexOf("No_image.png") < 0) 
     {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
@@ -3435,7 +3440,7 @@ function SaveOrder() {
                                 SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                             }
                             debugger;
-                            SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                          //  SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                             SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
                             var vrno = data.vrno;
                             setTimeout(function abc() {
