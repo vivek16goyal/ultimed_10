@@ -2368,23 +2368,28 @@ function onPhotoURISuccess(imageURI) {  ///////////
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;
     count = count + 1;
-    if (count == 1) {
+    if (count == 1)
+    {
         document.getElementById('Img16').src = imageURI;
         localStorage.setItem("ImagePath", imageURI);
     }
-    if (count == 2) {
+    if (count == 2)
+    {
         document.getElementById('Img15').src = imageURI;
         localStorage.setItem("ImagePath1", imageURI);
     }
-    if (count == 3) {
+    if (count == 3)
+    {
         document.getElementById('Img19').src = imageURI;
         localStorage.setItem("ImagePath2", imageURI);
     }
-    if (count == 4) {
+    if (count == 4)
+    {
         document.getElementById('Img20').src = imageURI;
         localStorage.setItem("ImagePath3", imageURI);
     }
-    if (count == 5) {
+    if (count == 5)
+    {
         document.getElementById('Img21').src = imageURI;
         localStorage.setItem("ImagePath4", imageURI);
     }
