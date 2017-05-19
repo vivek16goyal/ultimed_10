@@ -2366,24 +2366,26 @@ function clearCache() {
 function onPhotoURISuccess(imageURI) {  ///////////
     window.location.href = "#ImageSelect";
     var smallImage = document.getElementById('sel_image');
-    smallImage.src = imageURI;    
-    document.getElementById('Img16').src = imageURI;
+    smallImage.src = imageURI;
     count = count + 1;
     if (count == 1) {
-        localStorage.setItem("ImagePath", imageURI);
+        document.getElementById('Img16').src = imageURI;
     }
     if (count == 2) {
-        localStorage.setItem("ImagePath1", imageURI);
+        document.getElementById('Img15').src = imageURI;
     }
     if (count == 3) {
-        localStorage.setItem("ImagePath2", imageURI);
+        document.getElementById('Img19').src = imageURI;
     }
     if (count == 4) {
-        localStorage.setItem("ImagePath3", imageURI);
+        document.getElementById('Img20').src = imageURI;
     }
     if (count == 5) {
-        localStorage.setItem("ImagePath4", imageURI);
+        document.getElementById('Img21').src = imageURI;
     }
+        localStorage.setItem("ImagePath", imageURI);
+    
+   
 }
 
 
@@ -2392,23 +2394,24 @@ function onPhotoDataSuccess(imageURI) {  ///////////////
     window.location.href = "#ImageSelect";
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;    
-    document.getElementById('Img16').src = imageURI;
     count = count + 1;
     if (count == 1) {
-        localStorage.setItem("ImagePath", imageURI);
+        document.getElementById('Img16').src = imageURI;
     }
     if (count == 2) {
-        localStorage.setItem("ImagePath1", imageURI);
+        document.getElementById('Img15').src = imageURI;
     }
     if (count == 3) {
-        localStorage.setItem("ImagePath2", imageURI);
+        document.getElementById('Img19').src = imageURI;
     }
     if (count == 4) {
-        localStorage.setItem("ImagePath3", imageURI);
+        document.getElementById('Img20').src = imageURI;
     }
     if (count == 5) {
-        localStorage.setItem("ImagePath4", imageURI);
+        document.getElementById('Img21').src = imageURI;
     }
+       // localStorage.setItem("ImagePath", imageURI);
+   
     //movePic(imageURI);
 }
 
@@ -3008,7 +3011,7 @@ function fun_showCart() {
 }
 
 //multiply images for the ultimate
-function multimplyimage()
+function multimplyimage(imageURI)
 {
     var smallImage = document.getElementById('sel_image');
     $("#cart-pre").hide();
@@ -3037,10 +3040,11 @@ function multimplyimage()
     {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
-      //  count = parseInt(count) + 1;
+       // count = parseInt(count) + 1;
         if (count == 1) {
             var img = document.createElement("img");
             var api = localStorage.getItem("APIURL");
+                   // localStorage.setItem("ImagePath", imageURI);
             img.src = image;
             var src = document.getElementById("img1");
             img.id = "im1";
@@ -3402,7 +3406,8 @@ function SaveOrder() {
                             var vrno_temp = {
                                 vrno:data.vrno+'_01'
                             }
-                            if (smallImage.src.indexOf("No_image.png") < 0) {
+                            //if (smallImage.src.indexOf("No_image.png") < 0)
+                            {
                                 //image 1
                                 var imageURI = localStorage.getItem("ImagePath");
                                 filename = send(imageURI, data.vrno, "");
