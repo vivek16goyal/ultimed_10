@@ -2368,19 +2368,20 @@ function onPhotoURISuccess(imageURI) {  ///////////
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;    
     document.getElementById('Img16').src = imageURI;
-    if (count == 0) {
+    count = count + 1;
+    if (count == 1) {
         localStorage.setItem("ImagePath", imageURI);
     }
-    if (count == 1) {
+    if (count == 2) {
         localStorage.setItem("ImagePath1", imageURI);
     }
-    if (count == 2) {
+    if (count == 3) {
         localStorage.setItem("ImagePath2", imageURI);
     }
-    if (count == 3) {
+    if (count == 4) {
         localStorage.setItem("ImagePath3", imageURI);
     }
-    if (count == 4) {
+    if (count == 5) {
         localStorage.setItem("ImagePath4", imageURI);
     }
 }
@@ -2392,19 +2393,20 @@ function onPhotoDataSuccess(imageURI) {  ///////////////
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;    
     document.getElementById('Img16').src = imageURI;
-    if (count == 0) {
+    count = count + 1;
+    if (count == 1) {
         localStorage.setItem("ImagePath", imageURI);
     }
-    if (count == 1) {
+    if (count == 2) {
         localStorage.setItem("ImagePath1", imageURI);
     }
-    if (count == 2) {
+    if (count == 3) {
         localStorage.setItem("ImagePath2", imageURI);
     }
-    if (count == 3) {
+    if (count == 4) {
         localStorage.setItem("ImagePath3", imageURI);
     }
-    if (count == 4) {
+    if (count == 5) {
         localStorage.setItem("ImagePath4", imageURI);
     }
     //movePic(imageURI);
@@ -3035,7 +3037,7 @@ function multimplyimage()
     {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
-        count = parseInt(count) + 1;
+      //  count = parseInt(count) + 1;
         if (count == 1) {
             var img = document.createElement("img");
             var api = localStorage.getItem("APIURL");
