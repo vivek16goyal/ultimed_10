@@ -637,7 +637,6 @@ function BackButton() {
 
 function Reload() {
     document.getElementById('Img15').src = "";
-
     document.getElementById('Img16').src = "";
     document.getElementById('Img19').src = "";
     document.getElementById('Img20').src = "";
@@ -3061,7 +3060,7 @@ function multimplyimage(imageURI)
     {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
-       count = parseInt(count) + 1;
+       //count = parseInt(count) + 1;
         if (count == 1) {
             var img = document.createElement("img");
             var api = localStorage.getItem("APIURL");
