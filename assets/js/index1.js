@@ -3407,22 +3407,26 @@ function SaveOrder() {
                                 var imageURI1 = localStorage.getItem("ImagePath1");
                                 var vrno1 = data.vrno ;
                                 var vr = vrno1 + "_01";
-                                filename = send(imageURI1, data.vrno, "");
+                                filename1 = send(imageURI1, data.vrno, "");
                                 //image 3
                                 var imageURI2 = localStorage.getItem("ImagePath2");
                                 var vrno2 = data.vrno + "_02";
-                                filename = send(imageURI2, data.vrno, "");
+                                filename2 = send(imageURI2, data.vrno, "");
                                 //image 4
                                 var imageURI3 = localStorage.getItem("ImagePath3");
                                 var vrno3 = data.vrno + "_03";
-                                filename = send(imageURI3, data.vrno, "");
+                                filename3 = send(imageURI3, data.vrno, "");
                                 //image 5
                                 var imageURI4 = localStorage.getItem("ImagePath4");
                                 var vrno4 = data.vrno + "_04";
-                                filename = send(imageURI4, data.vrno, "");
+                                filename4 = send(imageURI4, data.vrno, "");
                             }
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                            SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
+                            SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
+                            SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
+                            SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                             SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
                             var vrno = data.vrno;
                             setTimeout(function abc() {
