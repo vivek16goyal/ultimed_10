@@ -3465,6 +3465,14 @@ function SaveOrder() {
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                             SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
+                            if (smallImage.src.indexOf("No_image.png") < 0) {
+                                document.getElementById('Img1').src = "";
+                                document.getElementById('Img2').src = "";
+                                document.getElementById('Img3').src = "";
+
+                                document.getElementById('Img4').src = "";
+                                document.getElementById('Img5').src = "";
+                            }
                             var vrno = data.vrno;
                             setTimeout(function abc() {
                                 SendNotif(vrno);
@@ -3486,14 +3494,7 @@ function SaveOrder() {
             });
         }
     }
-    if (smallImage.src.indexOf("No_image.png") < 0) {
-        document.getElementById('Img1').src = "";
-        document.getElementById('Img2').src = "";
-        document.getElementById('Img3').src = "";
-
-        document.getElementById('Img4').src = "";
-        document.getElementById('Img5').src = "";
-    }
+   
 }
     
 
