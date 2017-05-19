@@ -3380,14 +3380,7 @@ function SaveOrder() {
     var smallImage = document.getElementById('sel_image');
   
     var image = smallImage.src;
-    if (smallImage.src.indexOf("No_image.png") < 0) {
-        document.getElementById('Img1').src = "";
-        document.getElementById('Img2').src = "";
-        document.getElementById('Img3').src = "";
-
-        document.getElementById('Img4').src = "";
-        document.getElementById('Img5').src = "";
-    }
+   
     //img.src = api + "/VrImg/img_app/" + img1 + "";
     //         var src = document.getElementById("img01");
 
@@ -3492,6 +3485,14 @@ function SaveOrder() {
                 }
             });
         }
+    }
+    if (smallImage.src.indexOf("No_image.png") < 0) {
+        document.getElementById('Img1').src = "";
+        document.getElementById('Img2').src = "";
+        document.getElementById('Img3').src = "";
+
+        document.getElementById('Img4').src = "";
+        document.getElementById('Img5').src = "";
     }
 }
     
