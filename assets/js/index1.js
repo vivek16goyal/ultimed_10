@@ -2393,7 +2393,11 @@ function onPhotoURISuccess(imageURI) {  ///////////
         document.getElementById('Img21').src = imageURI;
         localStorage.setItem("ImagePath4", imageURI);
     }
-       // localStorage.setItem("ImagePath", imageURI);
+    if (count == 5)
+    {
+        count == 0;
+    }
+    // localStorage.setItem("ImagePath", imageURI);
     
    
 }
