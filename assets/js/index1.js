@@ -3477,12 +3477,12 @@ function SaveOrder() {
                             //filename1 = send(imageURI1, vr, "");
                            
                             if (smallImage.src.indexOf("No_image.png") < 0) {
-                                document.getElementById('Img1').src = "";
-                                document.getElementById('Img2').src = "";
-                                document.getElementById('Img3').src = "";
+                                document.getElementById('Img_1').src = "";
+                                document.getElementById('Img_2').src = "";
+                                document.getElementById('Img_3').src = "";
 
-                                document.getElementById('Img4').src = "";
-                                document.getElementById('Img5').src = "";
+                                document.getElementById('Img_4').src = "";
+                                document.getElementById('Img_5').src = "";
                             }
                             setTimeout(function abc() {
                                 SendNotif(vrno);
