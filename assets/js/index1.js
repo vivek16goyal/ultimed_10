@@ -2986,6 +2986,8 @@ function ShowNxtWind() {
 
 function fun_nextItem() {
     ClearItemInfo();
+    document.getElementById('sel_image').src = "";
+    
     $("#itm-srch").focus();
     if (localStorage.getItem("IsFromReorder") == "1") {
         window.location.href = "#Item-cart";
