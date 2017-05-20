@@ -3411,38 +3411,43 @@ function SaveOrder() {
                            // var i ;
                             // parseInt( i );
 
-                            if (smallImage.src.indexOf("No_image.png") < 0)
+                          //  if (smallImage.src.indexOf("No_image.png") < 0)
                             {
-                            for(var i=0;i<=count;i++)
+                            
                             {
-                                count = count - 1;
+                               
                            
-                                if (count == 0) {
+                                {
                                     //image 1
+                                    var vrno1 = data.vrno;
                                     var imageURI = localStorage.getItem("ImagePath");
                                     filename = send(imageURI, data.vrno, "");
                                    // SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                                 }
+                                
                                 //if (count ==1) {
-                                //    //image 2
-                                //    var imageURI1 = localStorage.getItem("ImagePath1");
-                                //    var vrno1 = data.vrno;
-                                //    var vr = vrno1 + "_01";
-                                //    filename1 = send(imageURI1, data.vrno, "");
+                                //image 2
+                               // var vr = vrno1 + "_01";
+                                    var imageURI1 = localStorage.getItem("ImagePath1");
+                                    
+                                    var vr = vrno1 + "_1";
+                                    filename1 = send(imageURI1, vr, "");
                                 //    //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
                                 //}
                                 //if (count == 2) {
                                 //    //image 3
-                                //    var imageURI2 = localStorage.getItem("ImagePath2");
+                                    var imageURI2 = localStorage.getItem("ImagePath2");
+                                    var vr2 = vrno1 + "_2";
                                 //    var vrno2 = data.vrno + "_02";
-                                //    filename2 = send(imageURI2, data.vrno, "");
+                                    filename2 = send(imageURI2, vr2, "");
                                 //   // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
                                 //}
                                 //if (count == 3 ){
                                 //    //image 4
-                                //    var imageURI3 = localStorage.getItem("ImagePath3");
+                                    var imageURI3 = localStorage.getItem("ImagePath3");
+                                    var vr1 = vrno1 + "_3";
                                 //    var vrno3 = data.vrno + "_03";
-                                //    filename3 = send(imageURI3, data.vrno, "");
+                                    filename3 = send(imageURI3, v1r, "");
                                 //   // SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
                                 //}
                                 //if(count==4){
@@ -3458,10 +3463,10 @@ function SaveOrder() {
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                              SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
                             var vrno = data.vrno;
-                            var imageURI1 = localStorage.getItem("ImagePath1");
-                            var vrno1 = data.vrno;
-                            var vr = vrno + "_01";
-                            filename1 = send(imageURI1, vr, "");
+                            //var imageURI1 = localStorage.getItem("ImagePath1");
+                            //var vrno1 = data.vrno;
+                            //var vr = vrno + "_01";
+                            //filename1 = send(imageURI1, vr, "");
                            
                             if (smallImage.src.indexOf("No_image.png") < 0) {
                                 document.getElementById('Img1').src = "";
