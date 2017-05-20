@@ -426,8 +426,8 @@ function getimage() {
             var src = document.getElementById("img03");
             img.id = "id3 ";
             src.appendChild(img);
-            document.getElementById("id3").style.width = "100%";
-            document.getElementById("id3").style.height = "100%";
+            //document.getElementById("id3").style.width = "100%";
+            //document.getElementById("id3").style.height = "100%";
 
 
             //image 4
@@ -2543,12 +2543,12 @@ function Receive(filename) {
                                 //document.getElementById(imgId).src = DownloadPath;                                
                                 document.getElementById('Img16').src = DownloadPath;
                                 //  document.getElementById('cart-pre').src = DownloadPath;
-                                document.getElementById('img1').src = DownloadPath;
-                                document.getElementById('img2').src = DownloadPath;
-                                document.getElementById('img3').src = DownloadPath;
+                                document.getElementById('img_1').src = DownloadPath;
+                                document.getElementById('img_2').src = DownloadPath;
+                                document.getElementById('img_3').src = DownloadPath;
 
-                                document.getElementById('img4').src = DownloadPath;
-                                document.getElementById('img5').src = DownloadPath;
+                                document.getElementById('img_4').src = DownloadPath;
+                                document.getElementById('img_5').src = DownloadPath;
                                 document.getElementById('sel_image').src = DownloadPath;
                                 localStorage.setItem("ImagePath", DownloadPath);
                                 fun_showCart();
@@ -3049,7 +3049,7 @@ function multimplyimage(imageURI) {
             var api = localStorage.getItem("APIURL");
             // localStorage.setItem("ImagePath", imageURI);
             img.src = image;
-            var src = document.getElementById("img1");
+            var src = document.getElementById("img_1");
             img.id = "im1";
             src.appendChild(img);
             // document.getElementById("im1").style.width = "100%";
@@ -3059,7 +3059,7 @@ function multimplyimage(imageURI) {
         if (count == 2) {
             var img = document.createElement("img");
             img.src = image;
-            var src = document.getElementById("img2");
+            var src = document.getElementById("img_2");
             img.id = "im2";
             src.appendChild(img);
             // document.getElementById("im2").style.width = "100%";
@@ -3070,7 +3070,7 @@ function multimplyimage(imageURI) {
         if (count == 3) {
             var img = document.createElement("img");
             img.src = image;
-            var src = document.getElementById("img3");
+            var src = document.getElementById("img_3");
             img.id = "im3";
             src.appendChild(img);
             //  document.getElementById("im3").style.width = "100%";
@@ -3081,7 +3081,7 @@ function multimplyimage(imageURI) {
         if (count == 4) {
             var img = document.createElement("img");
             img.src = image;
-            var src = document.getElementById("img4");
+            var src = document.getElementById("img_4");
             img.id = "im4";
             src.appendChild(img);
             // document.getElementById("im4").style.width = "100%";
@@ -3092,7 +3092,7 @@ function multimplyimage(imageURI) {
         if (count == 5) {
             var img = document.createElement("img");
             img.src = image;
-            var src = document.getElementById("img5");
+            var src = document.getElementById("img_5");
             img.id = "im5";
             src.appendChild(img);
             //  document.getElementById("im5").style.width = "100%";
