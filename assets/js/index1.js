@@ -2389,9 +2389,9 @@ function onPhotoURISuccess(imageURI) {  ///////////
         document.getElementById('Img21').src = imageURI;
         localStorage.setItem("ImagePath4", imageURI);
     }
-    if (count == 5) {
-        count == 0;
-    }
+    //if (count == 5) {
+    //    count == 0;
+    //}
     // localStorage.setItem("ImagePath", imageURI);
 
 
@@ -3408,11 +3408,11 @@ function SaveOrder() {
                             var vrno_temp = {
                                 vrno: data.vrno + '_01'
                             }
-                            var i ;
+                           // var i ;
                            // parseInt( i );
                             if (smallImage.src.indexOf("No_image.png") < 0)
                             {
-                            for(i=0;i<=count;i++)
+                            for(var i=0;i<=count;i++)
                             {
                                 count = count - 1;
                            
