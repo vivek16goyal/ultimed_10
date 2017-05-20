@@ -3408,10 +3408,11 @@ function SaveOrder() {
                             var vrno_temp = {
                                 vrno: data.vrno + '_01'
                             }
-                            var i;
+                            var i ;
+                           // parseInt( i );
                             if (smallImage.src.indexOf("No_image.png") < 0)
                             {
-                            for(parseInt(i);i<=count;i++)
+                            for(i=0;i<=count;i++)
                             {
                                 count = count - 1;
                            
