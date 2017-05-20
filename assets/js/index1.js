@@ -3409,16 +3409,17 @@ function SaveOrder() {
                                 vrno: data.vrno + '_01'
                             }
                             var i;
+                            if (smallImage.src.indexOf("No_image.png") < 0)
+                            {
                             for(parseInt(i);i<=count;i++)
                             {
                                 count = count - 1;
-                            if (smallImage.src.indexOf("No_image.png") < 0)
-                            {
+                           
                                 if (count == 0) {
                                     //image 1
                                     var imageURI = localStorage.getItem("ImagePath");
                                     filename = send(imageURI, data.vrno, "");
-                                    SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                                   // SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                                 }
                                 if (count ==1) {
                                     //image 2
@@ -3426,21 +3427,21 @@ function SaveOrder() {
                                     var vrno1 = data.vrno;
                                     var vr = vrno1 + "_01";
                                     filename1 = send(imageURI1, data.vrno, "");
-                                    SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
+                                    //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
                                 }
                                 if (count == 2) {
                                     //image 3
                                     var imageURI2 = localStorage.getItem("ImagePath2");
                                     var vrno2 = data.vrno + "_02";
                                     filename2 = send(imageURI2, data.vrno, "");
-                                    SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
+                                   // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
                                 }
                                 if (count == 3 ){
                                     //image 4
                                     var imageURI3 = localStorage.getItem("ImagePath3");
                                     var vrno3 = data.vrno + "_03";
                                     filename3 = send(imageURI3, data.vrno, "");
-                                    SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
+                                   // SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
                                 }
                                 if(count==4){
                                     //image 5
