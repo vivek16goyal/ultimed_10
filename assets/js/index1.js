@@ -3411,7 +3411,7 @@ function SaveOrder() {
                            // var i ;
                             // parseInt( i );
 
-                          //  if (smallImage.src.indexOf("No_image.png") < 0)
+                            if (smallImage.src.indexOf("No_image.png") < 0)
                             {
                             
                             {
@@ -3422,7 +3422,7 @@ function SaveOrder() {
                                     var vrno1 = data.vrno;
                                     var imageURI = localStorage.getItem("ImagePath");
                                     filename = send(imageURI, data.vrno, "");
-                                   // SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                                    SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                                 }
                                 
                                 //if (count ==1) {
@@ -3432,7 +3432,7 @@ function SaveOrder() {
                                     
                                     var vr = vrno1 + "_1";
                                     filename1 = send(imageURI1, vr, "");
-                                //    //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
+                                   SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
                                 //}
                                 //if (count == 2) {
                                 //    //image 3
@@ -3440,27 +3440,28 @@ function SaveOrder() {
                                     var vr2 = vrno1 + "_2";
                                 //    var vrno2 = data.vrno + "_02";
                                     filename2 = send(imageURI2, vr2, "");
-                                //   // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
+                                 SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
                                 //}
                                 //if (count == 3 ){
                                 //    //image 4
                                     var imageURI3 = localStorage.getItem("ImagePath3");
                                     var vr1 = vrno1 + "_3";
                                 //    var vrno3 = data.vrno + "_03";
-                                    filename3 = send(imageURI3, v1r, "");
-                                //   // SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
+                                   filename3 = send(imageURI3, v1r, "");
+                                SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
                                 //}
                                 //if(count==4){
                                 //    //image 5
-                                //    var imageURI4 = localStorage.getItem("ImagePath4");
-                                //    //var vrno4 = data.vrno + "_04";
-                                //    filename4 = send(imageURI4, data.vrno, "");
-                                //    //  SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
+                                    var imageURI4 = localStorage.getItem("ImagePath4");
+                                //var vrno4 = data.vrno + "_04";
+                                    var vr5 = vrno1 + "_4";
+                                    filename4 = send(imageURI4, vr5, "");
+                                     SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                                 //}
                         }
                     }
                             debugger;
-                            SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                          //  SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                              SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
                             var vrno = data.vrno;
                             //var imageURI1 = localStorage.getItem("ImagePath1");
