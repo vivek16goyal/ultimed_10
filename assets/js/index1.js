@@ -66,13 +66,13 @@ var count = parseInt("0");
 //var pDocReq = "0";
 
 var SMSFrom = "md-goyals";
-var loadmsg="Please Wait....";
+var loadmsg = "Please Wait....";
 var GBCServicePath = "http://tiaapp.goyalonline.in/";
 //var GBCServicePath = "http://localhost:51738/";
 var pictureSource;
 var destinationType;
 var folderPath = "file:///storage/sdcard0";
-var Flag ;
+var Flag;
 var myScroll;
 var activemenu;
 
@@ -85,21 +85,21 @@ function loaded() {
             mouseWheel: true,
             wheelAction: 'zoom'
         });
-        
+
     }
     catch (e) {
         alert(e.message);
     }
 }
-function slider(){
+function slider() {
     $("#slider").load("deep-minified.html");
     // document.getElementById("content").innerHTML = '<object type="type/html" data="deep-minified.html" ></object>';
 }
 function onDeviceReady() {
-    
-   // $("#Image1").imageURI
+
+    // $("#Image1").imageURI
     discount();
-   
+
     // var charge = $("#charges").text().toString().replace("Rs.", "");
     //  $("#td3").text().toString().fixed;
     pDiscPer = localStorage.getItem("label");
@@ -109,12 +109,12 @@ function onDeviceReady() {
         $("#div_statecity").hide();
     }
     else {
-       // slider();
+        // slider();
         $("#div_statecity").show();
         try {
             if (HomeSlideCnt == "1") {
                 $("#HomeSlider-div").html("<ul  id='sliderFrame' style='display: none' > <li id='slide-1'>" +
-                                         "<img src='assets/img/Slide-11.jpg' />" +"<img src='assets/img/Slide-11.jpg' />"+
+                                         "<img src='assets/img/Slide-11.jpg' />" + "<img src='assets/img/Slide-11.jpg' />" +
                                          "</li></ul>");
                 $("#sliderFrame").addClass("slides");
                 $("#sliderFrame li").show();
@@ -128,7 +128,7 @@ function onDeviceReady() {
             }
         } catch (e) {
             alert(e.message);
-        }        
+        }
     }
     if (pDocReq == "1") {
         $("#tr_DocLbl").show();
@@ -136,14 +136,13 @@ function onDeviceReady() {
         $("#pro_DocDiv").show();
         $("#Doc_Div").show();
     }
-    else
-    {
+    else {
         $("#tr_DocLbl").hide();
         $("#tr_DocTxt").hide();
         $("#pro_DocDiv").hide();
         $("#Doc_Div").hide();
     }
-    localStorage.setItem("isOTPmsg","0")
+    localStorage.setItem("isOTPmsg", "0")
     $("#RegOTPNo").slideUp();
     document.getElementById("tbl1").style.display = "none";
     document.getElementById("Table1").style.display = "none";
@@ -174,20 +173,20 @@ function onDeviceReady() {
         $("#on").hide();
         //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
         document.addEventListener("deviceready", HideWaiting, true);
-        document.addEventListener("backbutton", BackButton, true); 
+        document.addEventListener("backbutton", BackButton, true);
         document.addEventListener("pause", BackButton, false);
         window.location.href = "#page-con";
-        var pa= setInterval(
+        var pa = setInterval(
             function ab() {
                 clearInterval(pa);
                 Flag = '0';
                 CheckPartyRegistration("1")
-            }, 1000);    
+            }, 1000);
         var destination = $('#sel_image').offset();
-        var a = destination.top +10;
+        var a = destination.top + 10;
         var b = destination.right + 200
-        $('#A1').css({ top: a, right: b });       
-        
+        $('#A1').css({ top: a, right: b });
+
         getimage();
     }
     catch (e) {
@@ -197,7 +196,7 @@ function onDeviceReady() {
 //change link item cart
 function cliencode_check() {
     var clientCode = localStorage.getItem("ClientCode");
-    var preptcode=localStorage.getItem("PREPTCODE");
+    var preptcode = localStorage.getItem("PREPTCODE");
     if (clientCode == null || clientCode == "") {
         window.location = "index01.html";
     }
@@ -206,7 +205,7 @@ function cliencode_check() {
         var d = new Date();
         var currentyear = d.getFullYear();
         var cy = currentyear;
-        if (sp == cy || preptcode==cy) {
+        if (sp == cy || preptcode == cy) {
             window.location = "Retailer.html";
         }
         else {
@@ -253,7 +252,7 @@ function ShowPartyLdgr() {
         var todate = $("#todt_ldg1").val();
         //var todate;
         //var frmdate;
-        if (frmdate =="" || frmdate == null) {
+        if (frmdate == "" || frmdate == null) {
             frmdate = localStorage.getItem("startdt");
         }
         if (todate == "" || todate == null) {
@@ -386,70 +385,69 @@ function getimage() {
         type: "GET",
         cache: false,
         success: function (data, id) {
-             debugger;
-             {
-                 debugger;
+            debugger;
+            {
+                debugger;
                 //localStorage.setItem("IMAGE01",data.[0]);
                 img1 = data[0].IMG1;
-               // CONVERSION_IMAGE(img01);
+                // CONVERSION_IMAGE(img01);
                 // Convert the string to bytes
-
-                img2= data[0].IMG2;
-                 img3 = data[0].IMG3;
-                 img4 = data[0].IMG4;
-                 img5 = data[0].IMG5;
-             }
+                img2 = data[0].IMG2;
+                img3 = data[0].IMG3;
+                img4 = data[0].IMG4;
+                img5 = data[0].IMG5;
+            }
             //image 1
 
 
-             var img = document.createElement("img");
-             var api = localStorage.getItem("APIURL");
-             img.src = api + "/VrImg/img_app/" + img1 + "";
-             var src = document.getElementById("img01");
-             img.id = "id1";
-             src.appendChild(img);
-             document.getElementById("id1").style.width = "100%";
-             document.getElementById("id1").style.height = "100%";
+            var img = document.createElement("img");
+            var api = localStorage.getItem("APIURL");
+            img.src = api + "/VrImg/img_app/" + img1 + "";
+            var src = document.getElementById("img01");
+            img.id = "id1";
+            src.appendChild(img);
+            document.getElementById("id1").style.width = "100%";
+            document.getElementById("id1").style.height = "100%";
 
             //image 2
 
-             var img = document.createElement("img");
-             img.src = api + "/VrImg/img_app/" + img2 + "";
-             var src = document.getElementById("img02");
-             img.id = "id2";
-             src.appendChild(img);
-             document.getElementById("id2").style.width = "100%";
-             document.getElementById("id2").style.height = "100%";
+            var img = document.createElement("img");
+            img.src = api + "/VrImg/img_app/" + img2 + "";
+            var src = document.getElementById("img02");
+            img.id = "id2";
+            src.appendChild(img);
+            document.getElementById("id2").style.width = "100%";
+            document.getElementById("id2").style.height = "100%";
 
             //image 3
 
-             var img = document.createElement("img");
-             img.src = api + "/VrImg/img_app/" + img3 + "";
-             var src = document.getElementById("img03");
-             img.id = "id3";
-             src.appendChild(img);
-             document.getElementById("id3").style.width = "100%";
-             document.getElementById("id3").style.height = "100%";
+            var img = document.createElement("img");
+            img.src = api + "/VrImg/img_app/" + img3 + "";
+            var src = document.getElementById("img03");
+            img.id = "id3 ";
+            src.appendChild(img);
+            document.getElementById("id3").style.width = "100%";
+            document.getElementById("id3").style.height = "100%";
 
 
             //image 4
-             var img = document.createElement("img");
-             img.src = api + "/VrImg/img_app/" + img4 + "";
-             var src = document.getElementById("img04");
-             img.id = "id4";
-             src.appendChild(img);
-             document.getElementById("id4").style.width = "100%";
-             document.getElementById("id4").style.height = "100%";
+            var img = document.createElement("img");
+            img.src = api + "/VrImg/img_app/" + img4 + "";
+            var src = document.getElementById("img04");
+            img.id = "id4";
+            src.appendChild(img);
+            document.getElementById("id4").style.width = "100%";
+            document.getElementById("id4").style.height = "100%";
 
 
             //image 5
-             var img = document.createElement("img");
-             img.src = api + "/VrImg/img_app/" + img5 + "";
-             var src = document.getElementById("img05");
-             img.id = "id5";
-             src.appendChild(img);
-             document.getElementById("id5").style.width = "100%";
-             document.getElementById("id5").style.height = "100%";
+            var img = document.createElement("img");
+            img.src = api + "/VrImg/img_app/" + img5 + "";
+            var src = document.getElementById("img05");
+            img.id = "id5";
+            src.appendChild(img);
+            document.getElementById("id5").style.width = "100%";
+            document.getElementById("id5").style.height = "100%";
 
         },
         //if any error occure
@@ -458,67 +456,65 @@ function getimage() {
         }
 
     });
-   
-   
-   
+
+
+
     //
     //cleared chache
-   //var target = $('.cached-img');
+    //var target = $('.cached-img');
 
-   //ImgCache.isCached(target.attr('src'), function (path, success) {
-   //    if (success) {
-   //        // already cached
-   //        ImgCache.useCachedFile(target);
-   //    } else {
-   //        // not there, need to cache the image
-   //        ImgCache.cacheFile(target.attr('src'), function () {
-   //            ImgCache.useCachedFile(target);
-   //        });
-   //    }
+    //ImgCache.isCached(target.attr('src'), function (path, success) {
+    //    if (success) {
+    //        // already cached
+    //        ImgCache.useCachedFile(target);
+    //    } else {
+    //        // not there, need to cache the image
+    //        ImgCache.cacheFile(target.attr('src'), function () {
+    //            ImgCache.useCachedFile(target);
+    //        });
+    //    }
     //});
-   //flushdata(obj)
-   //flushdata(obj, mode)
-  }
+    //flushdata(obj)
+    //flushdata(obj, mode)
+}
 //ultimate change call scheme master
-function sch_mas()
-{
+function sch_mas() {
     var icode;
     icode = scheme;
-   // var qty, free;
+    // var qty, free;
     WebSerUrl = localStorage.getItem("APIURL");
     {
         $.ajax({
-            url: WebSerUrl + "/Values/GET_scheme?icode="+icode,
+            url: WebSerUrl + "/Values/GET_scheme?icode=" + icode,
             type: "GET",
-            cache: false,          
+            cache: false,
             success: function (data) {
                 debugger;
                 if (data != 0) {
-                  //  qty, stdt, eddt, free
+                    //  qty, stdt, eddt, free
                     qty = data[0].QTY;
                     stdt = data[0].STARTDATE;
                     eddt = data[0].ENDDATE;
                     free = data[0].FREE;
-                        $("sm_free").text( "For" + qty + "We Have" + free + "free");
-                    }
-                    else {
-                        $("sm_free").text("No Scheme Available");
-                    }
+                    $("sm_free").text("For" + qty + "We Have" + free + "free");
+                }
+                else {
+                    $("sm_free").text("No Scheme Available");
+                }
                 // $("#lblRetailrate")
-                if (data ==0)
-                {
+                if (data == 0) {
                     $("#sm_free").text("No scheme available");
                     qty = "";
                 } else {
                     $("#sm_free").text("For " + qty + " ITEM We Have " + free + " free");
                 }
             }
-              
+
         });
-       
+
     }
-    
-  
+
+
 
 }
 function SendLedgerEmail() {
@@ -585,7 +581,7 @@ function Forward() {
             break;
         case "Item-Info-Search":
             window.location.href = "#Item-cart";
-            break;        
+            break;
         default:
             window.location.href = "#page-con";
     }
@@ -604,7 +600,7 @@ function BackButton() {
             navigator.app.exitApp();
             break;
         case "divRegi":
-            
+
             break;
         case "Item-Info-Search":
         case "profile":
@@ -716,7 +712,7 @@ function UpdateDeviceId() {
         dataType: "json",
         cache: false,
         success: function (data) {
-           
+
         }
     });
 
@@ -730,10 +726,10 @@ function UpdateDeviceId() {
         dataType: "json",
         cache: false,
         success: function (data) {
-            
+
         },
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-          
+
         }
     });
 }
@@ -750,17 +746,17 @@ function CheckPartyRegistration(val) {
     if (clientCode == null || clientCode == "") {
         showClient();
     }
-    
-    else {  
-        var APIURL = localStorage.getItem("APIURL");     
-       //var url = GBCServicePath + "/Values/checkparty?PtCode=" + clientCode;
+
+    else {
+        var APIURL = localStorage.getItem("APIURL");
+        //var url = GBCServicePath + "/Values/checkparty?PtCode=" + clientCode;
         var url = APIURL + "/Values/checkparty?PtCode=" + clientCode;
         try {
             $.ajax({
                 url: url,
                 type: "GET",
                 success: function (data) {
-                    try{
+                    try {
                         if (APPType == "@") {
                             $("#a4_").show();
                         } else {
@@ -778,10 +774,10 @@ function CheckPartyRegistration(val) {
                                 showClient();
                             }
                             else {
-                                try{
+                                try {
                                     debugger;
                                     getimage();
-                                    var nameSer = data.split('|');                                   
+                                    var nameSer = data.split('|');
                                     localStorage.setItem("PTNAME", nameSer[3]);
                                     localStorage.setItem("PTCODE", nameSer[4]);
                                     localStorage.setItem("PTNO", nameSer[5]);
@@ -812,7 +808,7 @@ function CheckPartyRegistration(val) {
                         } else {
                             if (data.split('|')[0] == null || data.split('|')[0] == "") {
                                 AfterLoginPage();
-                                alert("Please Select Supplier");                            
+                                alert("Please Select Supplier");
                                 GetActiveSupplierList();
                                 window.location.href = "#profile";
                             } else {
@@ -824,9 +820,9 @@ function CheckPartyRegistration(val) {
                                     showClient();
                                 }
                                 else {
-                                    
+
                                     var nameSer = data.split('|');
-                                   
+
                                     localStorage.setItem("APIURL", nameSer[0]);
                                     localStorage.setItem("PNAME", nameSer[1]);
                                     localStorage.setItem("PCode", nameSer[2]);
@@ -895,7 +891,7 @@ function CheckSupplierStatus() {
                 url: url,
                 type: "GET",
                 success: function (data) {
-                    $(".hide-page-loading-msg").click();                    
+                    $(".hide-page-loading-msg").click();
                     showDisplayMsg(data);
                     setInterval(
                         function Check() {
@@ -946,7 +942,7 @@ function showDisplayMsg(AppURL) {
                 }
                 getStartEndDate();
                 PingTiaService("2");
-                
+
                 //AfterLoginPage();
                 //window.location.href = "#page-con";
             } catch (e) {
@@ -1051,7 +1047,7 @@ function CheckMono() {
                 dataType: "json",
                 cache: false,
                 success: function (data) {
-                   
+
                     //if (data.indexOf("$") == 0) {
                     //    alert(data);
                     //    $(".hide-page-loading-msg").click();
@@ -1081,7 +1077,7 @@ function CheckMono() {
 
 
 function ChkOTPSend() {
-    
+
     try {
         if (localStorage.getItem("txtName") != "" && localStorage.getItem("txtMono") != "" && localStorage.getItem("txtAdd") != "" && localStorage.getItem("txtEmail") != "" && localStorage.getItem("txtName") != null && localStorage.getItem("txtMono") != null && localStorage.getItem("txtAdd") != null && localStorage.getItem("txtEmail") != null) {
             $("#txtRegName").val(localStorage.getItem("txtName"));
@@ -1089,12 +1085,12 @@ function ChkOTPSend() {
             $("#txtadd").val(localStorage.getItem("txtAdd"));
             $("#txtemail").val(localStorage.getItem("txtEmail"));
         }
-        if (localStorage.getItem("OTP") != "" && localStorage.getItem("OTP") != null) {            
+        if (localStorage.getItem("OTP") != "" && localStorage.getItem("OTP") != null) {
             $("#divOTP").slideDown();
             $("#txtotp").focus();
             window.scrollTo(0, 800);
         }
-        else {           
+        else {
             $("#divOTP").slideUp();
         }
         var link = window.location.href.toString();
@@ -1103,7 +1099,7 @@ function ChkOTPSend() {
         if (r[1] != "divRegi") {
             window.location.href = "#divRegi";
         }
-        
+
     }
     catch (e) {
         alert(e.message);
@@ -1127,7 +1123,7 @@ function SendingOTP() {
         var no = localStorage.getItem("randomNo");
         var msg = "Hi! Welcome to TiaERP@ConsumerApp. Your OTP no is ";
         if (APPType == "$") {
-            msg = "Hi! Welcome to " + Heading + " App. Your OTP no is " ;
+            msg = "Hi! Welcome to " + Heading + " App. Your OTP no is ";
         }
         localStorage.setItem("OTP", localStorage.getItem("randomNo"));
         localStorage.setItem("OTpMsgBody", msg);
@@ -1137,7 +1133,7 @@ function SendingOTP() {
             type: "GET",
             dataType: "json",
             cache: false,
-            success: function (data) {            
+            success: function (data) {
                 if (data == "1") {
                     clearInterval(showIntval1);
                     $(".show-page-loading-msg").click();
@@ -1151,9 +1147,9 @@ function SendingOTP() {
                     }
                     else {
                         alert("Sorry!!! SMS Sending Failed. Please Try after some Time.");
-                    }                
+                    }
                 }
-            
+
             },
             error: function (xmlHttpRequest, textStatus, errorThrown) {
                 alert("Sorry!!! SMS Sending Failed. Please Try after some Time.");
@@ -1174,7 +1170,7 @@ function ReadOTP() {
     showIntval = setInterval(function fun2() {
         $(".show-page-loading-msg").click();
     }, 10);
-    setTimeout(function fun1() {        
+    setTimeout(function fun1() {
         closeVerification();
         $("#divOTP").show();
     }, 16000);
@@ -1201,7 +1197,7 @@ $(document).ready(function () {
     $("#txtRegName").blur(function (e) {
         if ($("#txtRegName").val().length <= 3) {
             alert("Enter Proper Name");
-            
+
         }
     });
     $("#txtMoNO").blur(function (e) {
@@ -1226,13 +1222,13 @@ function CheckOTP() {
     else {
         if (OTP == localStorage.getItem("OTP")) {
             localStorage.setItem("randomNo", "");
-            if (localStorage.getItem("PTCODE") == "" || localStorage.getItem("PTCODE") == null || localStorage.getItem("ClientCode") =="" || localStorage.getItem("ClientCode")==null) {
+            if (localStorage.getItem("PTCODE") == "" || localStorage.getItem("PTCODE") == null || localStorage.getItem("ClientCode") == "" || localStorage.getItem("ClientCode") == null) {
                 Register();
             }
             else {
                 UpdateProfileData();
             }
-            
+
         }
         else {
             alert("Incorrect OTP");
@@ -1345,7 +1341,7 @@ $(function () {
                 localStorage.setItem("DocCode", ui.item.code);
                 localStorage.setItem("DocName", ui.item.label);
             },
-            close: function () {               
+            close: function () {
             },
             minLength: 1,
             delay: 1
@@ -1360,7 +1356,7 @@ $(function () {
         $('#selState').autocomplete({
             autoFocus: true,
             source: function (request, response) {
-                 
+
                 $.ajax({
                     url: localStorage.getItem("APIURL") + "/Order/GetStateList?name=" + request.term,
                     type: "GET",
@@ -1368,10 +1364,10 @@ $(function () {
                     cache: false,
                     success: function (data) {
                         response($.map(data, function (item, id) {
-                           
+
                             var mydata = {
                                 label: item.StName,
-                                code: item.StCode                                
+                                code: item.StCode
                             };
                             return mydata;
                         }));
@@ -1385,7 +1381,7 @@ $(function () {
 
             messages: {
                 noResults: function (resultsCount) {
-                  
+
                 },
                 results: function (resultsCount) {
 
@@ -1410,7 +1406,7 @@ $(function () {
             minLength: 1,
             delay: 1
         })
-        
+
     } catch (err) {
     }
 });
@@ -1456,7 +1452,7 @@ $(function () {
                 localStorage.setItem("CtName", ui.item.label);
                 localStorage.setItem("Ctcode", ui.item.code);
                 localStorage.setItem("City", ui.item.code)
-               
+
                 $('#selArea').focus();
             },
             close: function () {
@@ -1516,7 +1512,7 @@ $(function () {
                 localStorage.setItem("Acode", ui.item.code);
                 localStorage.setItem("AName", ui.item.label);
                 localStorage.setItem("Area", ui.item.code);
-                
+
                 $('#txtadd').focus();
             },
             close: function () {
@@ -1571,7 +1567,7 @@ $(function () {
 
                 }
             },
-            search: function (event, ui) {                
+            search: function (event, ui) {
                 localStorage.setItem("Stcode", "");
                 localStorage.setItem("StName", "");
 
@@ -1834,7 +1830,7 @@ function CheckListValidation(val) {
                 break;
             case '6':
                 var name = $("#Textarea").val();
-                if (name != "" && name != null ) {
+                if (name != "" && name != null) {
                     if (name.trim() != localStorage.getItem("AName")) {
                         $("#a7").show();
                         $("#Textarea").css('color', 'red');
@@ -1899,12 +1895,12 @@ function Register() {
             type: "GET",
             dataType: "json",
             cache: false,
-            success: function (data) {            
+            success: function (data) {
                 if (data.indexOf("$") == 0) {
                     alert(data);
                 }
                 else {
-                    try{
+                    try {
                         localStorage.setItem("PTNAME", Name);
                         localStorage.setItem("PTCODE", data);
                         localStorage.setItem("PTNO", MoNo);
@@ -1934,7 +1930,7 @@ function Register() {
                 }, 6000);
             },
             error: function (xmlHttpRequest, textStatus, errorThrown) {
-                
+
                 alert(textStatus);
                 $(".hide-page-loading-msg").click();
             }
@@ -1948,7 +1944,7 @@ function Register() {
 ///////End Registration Process
 
 function Rpt_click() {
-    $("#lblptname1").text(localStorage.getItem("PTNAME").toString().toUpperCase());    
+    $("#lblptname1").text(localStorage.getItem("PTNAME").toString().toUpperCase());
     window.location.href = "#saleRpt";
     GetSaleRpt();
 }
@@ -1960,9 +1956,9 @@ function GetSaleRpt() {
     var frmdate = $("#frmdt_ldg").val();
     var todate = $("#todt_ldg").val();
     var pcode = 'ZZZZZZ'; PCODE;
-    var ptcode =   localStorage.getItem("PTCODE");
+    var ptcode = localStorage.getItem("PTCODE");
     var vrtype = $("#flip-chk-vrtype").val();
-    url = url + "/Values/GetSaleRpt?fromdate=" + frmdate + "&Todate=" + todate + "&pcode=" + pcode + "&ptcode=" + ptcode + "&vrtype=" + vrtype;    
+    url = url + "/Values/GetSaleRpt?fromdate=" + frmdate + "&Todate=" + todate + "&pcode=" + pcode + "&ptcode=" + ptcode + "&vrtype=" + vrtype;
     $.ajax({
         url: url,
         type: "GET",
@@ -1976,7 +1972,7 @@ function GetSaleRpt() {
             for (var i = 0; i < itm.length; i++) {
                 if (i == itm.length - 1) {
                     $("#saleRptBody tr:last").after("<tr><td colspan='2' style='color:purple;font-weight:bold;'>" + itm[i].Vrno + "</td><td style='color:purple;font-weight:bold; text-align:right;width:70px;'>" + itm[i].cashAmt + "</td><td  style='color:purple;font-weight: bold; text-align:right;width:70px;'>" + itm[i].crAmt + "</td></tr></tbody>");
-                    
+
                 } else {
                     $("#saleRptBody tr:last").after(
                         "<tr><td>" + itm[i].Vrno + "</td> <td>" + itm[i].Vrdt + "</td><td style='text-align: right;'>" + itm[i].cashAmt + "</td><td style='text-align: right;'>" + itm[i].crAmt + "</td></tr></tbody>");
@@ -1990,7 +1986,7 @@ function GetSaleRpt() {
     });
 }
 
-function AfterLoginPage() {    
+function AfterLoginPage() {
     GetWalletBal('2');
     $("#li-wal").removeClass('ui-li-has-thumb');
     $("#menuUName").text("Hi, " + localStorage.getItem("PTNAME"));
@@ -2016,7 +2012,7 @@ function AfterLoginPage() {
     $("#menuBottun").show();
     $("#sliderFrame").show();
     $("#a_div-clientCode").hide();
-   
+
     var item = localStorage.getItem("ListFDNAME");
     if (APPType == "@") {
         document.getElementById("Table1").style.display = "Block";
@@ -2048,7 +2044,7 @@ function SetStaeCity() {
     var WebSerUrl = localStorage.getItem("APIURL");
     WebSerUrl = WebSerUrl + "/Values/GetCodeName?st=" + a + "&ct=" + b + "&ar=" + c;
     $.ajax({
-        url: WebSerUrl  ,
+        url: WebSerUrl,
         type: "GET",
         dataType: "json",
         cache: false,
@@ -2056,23 +2052,23 @@ function SetStaeCity() {
             str = data.split('|');
             $("#Textstate").val(str[0]);
             $("#Textcity").val(str[1]);
-            $("#Textarea").val(str[2]);            
+            $("#Textarea").val(str[2]);
             $("#CustState").text(str[2] + ", " + str[1] + ", " + str[0]);
             localStorage.setItem("DelCharges", str[3]);
             SetOrderBillAmtType();
         },
         error: function (xmlHttpRequest, textStatus, errorThrown) {
-           
+
         }
     })
 }
 
 function SetOrderBillAmtType() {
-    try {              
-        var DelChrg = localStorage.getItem("DelCharges");    
+    try {
+        var DelChrg = localStorage.getItem("DelCharges");
         $("#charges").text(Number(DelChrg).toFixed(2));
         var Amt = $("#amt").text().toString().replace("Rs.", "");
-        var NwAmt = Number(Amt) ;
+        var NwAmt = Number(Amt);
         var WalAmt;
         var DiscAmt;
         if (pDiscOnOrder == "1") {
@@ -2120,7 +2116,7 @@ function UpdateCustomer(PCode, Pname) {
         $.ajax({
             url: GBCServicePath + "/Values/UpdateCustomer?PCode=" + PCode + "&ClientCode=" + localStorage.getItem("ClientCode"),
             type: "GET",
-            dataType: "json", 
+            dataType: "json",
             cache: false,
             success: function (data) {
                 $(".hide-page-loading-msg").click();
@@ -2160,7 +2156,7 @@ function UpdateCustomer(PCode, Pname) {
     }
 }
 
-function PingTiaService(val) {    
+function PingTiaService(val) {
     $("#imgcheck").hide();
     $(".activeImg").show();
     if (Flag != "0") {
@@ -2169,9 +2165,9 @@ function PingTiaService(val) {
             $(".show-page-loading-msg").click();
         }
     }
-    
-    var APIURL = localStorage.getItem("APIURL");    
-    APIURL= APIURL + "/Values/Ping?PtCode=" + localStorage.getItem("ClientCode");    
+
+    var APIURL = localStorage.getItem("APIURL");
+    APIURL = APIURL + "/Values/Ping?PtCode=" + localStorage.getItem("ClientCode");
     $.ajax({
         url: APIURL,
         type: "GET",
@@ -2315,7 +2311,7 @@ function Upload_click() {
 }
 
 function SetItem_Count() {
-    try{
+    try {
         var arry = localStorage.getItem("SelectedItemInfo");
         var count;
         if (arry != null) {
@@ -2342,7 +2338,7 @@ function SetItem_Count() {
             $("#Item-grid-table").show();
         }
         $("#itm-cnt").text("Total " + Number(count) + " Item found");
-        
+
         //for (var i = 1; i <= arrLength - 1; i++) {
         //    var data = (JSON).parse(splitArr[i]);
         //    if (data.check == "1") {
@@ -2357,8 +2353,8 @@ function SetItem_Count() {
         textAnim('lbl-cart-cnt', 'bounceInDown');
         textAnim('lbl-cart-cnt1', 'bounceInDown');
         textAnim('lbl-cart-cnt2', 'bounceInDown');
-        
-    }catch(E){
+
+    } catch (E) {
     }
 }
 
@@ -2373,38 +2369,32 @@ function onPhotoURISuccess(imageURI) {  ///////////
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;
     count = count + 1;
-    if (count == 1)
-    {
+    if (count == 1) {
         document.getElementById('Img16').src = imageURI;
         localStorage.setItem("ImagePath", imageURI);
     }
-    if (count == 2)
-    {
+    if (count == 2) {
         document.getElementById('Img15').src = imageURI;
         localStorage.setItem("ImagePath1", imageURI);
     }
-    if (count == 3)
-    {
+    if (count == 3) {
         document.getElementById('Img19').src = imageURI;
         localStorage.setItem("ImagePath2", imageURI);
     }
-    if (count == 4)
-    {
+    if (count == 4) {
         document.getElementById('Img20').src = imageURI;
         localStorage.setItem("ImagePath3", imageURI);
     }
-    if (count == 5)
-    {
+    if (count == 5) {
         document.getElementById('Img21').src = imageURI;
         localStorage.setItem("ImagePath4", imageURI);
     }
-    if (count == 5)
-    {
+    if (count == 5) {
         count == 0;
     }
     // localStorage.setItem("ImagePath", imageURI);
-    
-   
+
+
 }
 
 
@@ -2412,7 +2402,7 @@ function onPhotoURISuccess(imageURI) {  ///////////
 function onPhotoDataSuccess(imageURI) {  ///////////////
     window.location.href = "#ImageSelect";
     var smallImage = document.getElementById('sel_image');
-    smallImage.src = imageURI;    
+    smallImage.src = imageURI;
     count = count + 1;
     if (count == 1) {
         document.getElementById('Img16').src = imageURI;
@@ -2429,8 +2419,8 @@ function onPhotoDataSuccess(imageURI) {  ///////////////
     if (count == 5) {
         document.getElementById('Img21').src = imageURI;
     }
-       // localStorage.setItem("ImagePath", imageURI);
-   
+    // localStorage.setItem("ImagePath", imageURI);
+
     //movePic(imageURI);
 }
 
@@ -2469,7 +2459,7 @@ function capturePhotoEdit() { ///////////
 
 //            }, dirFail);
 //        };
-        
+
 //        // get file system to copy or move image file to
 //        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFileSystem,
 //                fsFail);
@@ -2529,8 +2519,7 @@ function send(imageURI, fileName, val) {
     }
     var ft = new FileTransfer();
     ft.upload(imageURI, encodeURI(WebSerUrl + "/upload/Post"), win, fail, options);
-    if (val != "GBC")
-    {
+    if (val != "GBC") {
         ft.upload(imageURI, encodeURI(WebSerUrl + "/upload/PostInside"), win, fail, options);
     }
     return fileName;
@@ -2544,7 +2533,7 @@ function Receive(filename) {
         try {
             filename = filename + ".jpeg";
             var DownloadPath = fileSystem.root.toURL();
-            DownloadPath = DownloadPath + filename ;
+            DownloadPath = DownloadPath + filename;
             var downloadURl = GBCServicePath;
             downloadURl = localStorage.getItem("APIURL") + "UploadedImage/" + filename;
             var uri = encodeURI(downloadURl);
@@ -2608,7 +2597,7 @@ function ShowErrorFromServer(err) {
 }
 //schewm master calculation
 function toggle(element) {
-   // if (element.value == '1')
+    // if (element.value == '1')
     {
         debugger;
         if (qty == "") { }
@@ -2629,14 +2618,12 @@ function toggle(element) {
             }
         }
     }
-    
+
 }
-function schem_calculation(qty_sh)
-{
-   // var qty_sh = $("#txt-qty").val();
-    if (qty_sh>=qty)
-    {
-       
+function schem_calculation(qty_sh) {
+    // var qty_sh = $("#txt-qty").val();
+    if (qty_sh >= qty) {
+
         var count = parseInt(free02) + parseInt(free);
         free02 = count;
         $("#txt-free").val(free02);
@@ -2657,12 +2644,12 @@ $(function () {
                 $.ajax({
                     url: localStorage.getItem("APIURL") + "/Product/GetItemConsumer1",
                     data: { Iname: request.term, PCODE: 'ZZZZZZ' },
-                   // data: { Iname: request.term, FdName: localStor },
+                    // data: { Iname: request.term, FdName: localStor },
                     type: "GET",
                     dataType: "json",
                     cache: false,
                     success: function (data) {
-                       // debugger;
+                        // debugger;
                         response($.map(data, function (item, id) {
                             if (item.INAME.indexOf("$") == 0) {
                                 ShowErrorFromServer(item.INAME);
@@ -2677,9 +2664,9 @@ $(function () {
                                 GNAME: item.GNAme,
                                 Rate: item.Rate,
                                 WRate: item.WRate,
-                                localrate:item.LOCALPRICE
+                                localrate: item.LOCALPRICE
                             }
-                           
+
                             return mydata;
                         }));
                     },
@@ -2712,20 +2699,20 @@ $(function () {
                 var wrate = ui.item.WRate;
                 if (wrate == "0") {
                     $("#lblRate").text(ui.item.localrate);
-                    
+
                 }
                 else {
                     $("#lblRate").text(ui.item.WRate);
-                  
+
                 }
-               // debugger;
-                scheme= ui.item.Icode;
+                // debugger;
+                scheme = ui.item.Icode;
                 $("#localrate").text(ui.item.localrate);
                 $("#lblItmCode").text(ui.item.Icode);
                 $("#lblItmMRP").text(ui.item.Mrp);
                 $("#lblItmName").text(ui.item.label);
                 $("#PackExp").text(ui.item.packing);
-                $("#lblContent").text(ui.item.GNAME);                
+                $("#lblContent").text(ui.item.GNAME);
                 fun_showItmInfo("#");
                 sch_mas();
                 getimage();
@@ -2737,7 +2724,7 @@ $(function () {
         }).data("ui-autocomplete")._renderItem = function (ul, item) {
             return $('<li></li>')
               .append("<a style='padding-left:5px;padding-right:5px;padding-top:8px;line-height:6vh'><label style='width:90%;white-space:initial;' > " + item.label + " (" + item.packing + ")</label>")
-              .append("<p style='margin:0px;padding-left:5px;padding-right:5px;'> MRP : " + item.Mrp+ "</p>")
+              .append("<p style='margin:0px;padding-left:5px;padding-right:5px;'> MRP : " + item.Mrp + "</p>")
               .append("<hr /></a>")
               .appendTo(ul);
         };
@@ -2745,25 +2732,24 @@ $(function () {
     }
 });
 //ultimate new item
-function new_item()
-{
-   var new_item= $("#itm-srch").val();
-   $("#lblItmName").text(new_item);
+function new_item() {
+    var new_item = $("#itm-srch").val();
+    $("#lblItmName").text(new_item);
 
-   var in_item = parseInt(incre) + 1;
-   $("#lblItmCode").text("ZZZZ" + in_item);
-   //Qty = $("#txt-qty").val();
-   //free = $("#txt-free").val();
-  // Icode = $("#lblItmCode").text();
+    var in_item = parseInt(incre) + 1;
+    $("#lblItmCode").text("ZZZZ" + in_item);
+    //Qty = $("#txt-qty").val();
+    //free = $("#txt-free").val();
+    // Icode = $("#lblItmCode").text();
     // Iname = $("#lblItmName").text();
-   incre = in_item;
-   sm_free
-   $("#sm_free").text("NUll ");
-   $("#lblItmMRP").text("0");
-   $("#PackExp").text("0");
+    incre = in_item;
+    sm_free
+    $("#sm_free").text("NUll ");
+    $("#lblItmMRP").text("0");
+    $("#PackExp").text("0");
     $("#lblRetailrate").text("0");
-   $("#lblRate").text("0");
-   $("#lblContent").text("0");
+    $("#lblRate").text("0");
+    $("#lblContent").text("0");
     fun_showItmInfo("#");
 }
 function ClearItemInfo() {
@@ -2777,11 +2763,11 @@ function ClearItemInfo() {
     $("#itm-srch").val("");
     $("#itm-srch").text("");
 
-    
-    
+
+
 }
 
-function fun_showItmInfo(id) {   
+function fun_showItmInfo(id) {
     $("#txt-qty").val("");
     $("#txt-free").val("");
     if (id != '#') {
@@ -2796,7 +2782,7 @@ function fun_showItmInfo(id) {
     $("#txt-qty").focus();
     SetItem_Count();
     $("#a_Item-Info-Search-Body").click();
-    
+
 }
 
 var isupdate = '0';
@@ -2805,11 +2791,11 @@ var IsProcessComplete = '0';
 function fun_AddToCart() {
     //change to fetch  discount
     discount();
-   // var charge = $("#charges").text().toString().replace("Rs.", "");
-  //  $("#td3").text().toString().fixed
+    // var charge = $("#charges").text().toString().replace("Rs.", "");
+    //  $("#td3").text().toString().fixed
     pDiscPer = localStorage.getItem("label");
- 
-    $("#td3").text(Number(pDiscPer).toFixed(2)+"% Dis");
+
+    $("#td3").text(Number(pDiscPer).toFixed(2) + "% Dis");
     var Qty = $("#txt-qty").val().trim();
     var free = $("#txt-free").val().trim();
     var qty_free = Number(Qty) + Number(free);
@@ -2825,8 +2811,7 @@ function fun_AddToCart() {
         fun_AddToCartCont();
     }
 }
-function discount()
-{
+function discount() {
     Code = localStorage.getItem("PTCODE");
     var WebSerUrl = localStorage.getItem("APIURL");
     WebSerUrl = WebSerUrl + "/Values/get_discount?PtCode=" + Code;
@@ -2834,7 +2819,7 @@ function discount()
         $.ajax({
             url: WebSerUrl,
             type: "get",
-            
+
             dataType: 'json',
             cache: false,
             processData: true,
@@ -2843,8 +2828,8 @@ function discount()
                 //alert(item)
                 var arry = data.split('<|>');
                 if (data != "") {
-                    localStorage.setItem("label",arry[0]);
-                    
+                    localStorage.setItem("label", arry[0]);
+
                 }
                 else {
                     pDiscPer = "0";
@@ -2880,7 +2865,7 @@ function InsertDataToarray() {
     var IndexAtFound = null;
     var gname;
     var WRate;
-  //  var Remark = "";
+    //  var Remark = "";
     var indexInArray = '';
     var SelectedId = localStorage.getItem("SelectedItemIndex");
     localStorage.setItem("SelectedItemIndex", "");
@@ -2950,7 +2935,7 @@ function InsertDataToarray() {
         "free": free.trim(),
         "GNAMe": gname.trim(),
         "WRate": WRate.trim(),
-        "Remark":Remark.trim()
+        "Remark": Remark.trim()
     }
 
     var Itemdata = JSON.stringify(ItemInfo);
@@ -2976,7 +2961,7 @@ function InsertDataToarray() {
         }
     }
     IsProcessComplete = "1";
-    
+
     localStorage.setItem("SelectedItemIndex", "");
     SetItem_Count();
 
@@ -3000,17 +2985,17 @@ function ShowNxtWind() {
 }
 
 function fun_nextItem() {
-   ClearItemInfo();
+    ClearItemInfo();
     $("#itm-srch").focus();
     if (localStorage.getItem("IsFromReorder") == "1") {
         window.location.href = "#Item-cart";
     } else {
         window.location.href = "#Item-Info-Search";
-      //  window.location.href = "#Item-Info-Search-Body";
-      //  var itm= document.getElementById("itm-srch").value;
-      ////   = $("#itm-srch").val();
-      //  $("#lblItmName").text(itm);
-       fun_showCart();
+        //  window.location.href = "#Item-Info-Search-Body";
+        //  var itm= document.getElementById("itm-srch").value;
+        ////   = $("#itm-srch").val();
+        //  $("#lblItmName").text(itm);
+        fun_showCart();
     }
 }
 
@@ -3031,45 +3016,43 @@ function fun_showCart() {
 }
 
 //multiply images for the ultimate
-function multimplyimage(imageURI)
-{
+function multimplyimage(imageURI) {
     var smallImage = document.getElementById('sel_image');
     $("#cart-pre").hide();
     $("#lbl-cart-pre").hide()
     var image = smallImage.src;
-//  if (smallImage.src.indexOf("No_image.png") < 0) 
+    //  if (smallImage.src.indexOf("No_image.png") < 0) 
     //{
     //    $("#cart-pre").show();
     //     $("#lbl-cart-pre").show();
-        
+
     //    $("#cart-pre").html("");
     //    for (var i = count; i <= count; i++) {
     //        $("#cart-pre").append(
     //            "<li >" +
     //            "<img  src=" + image + "  onclick='FullSize()' id=" +  + " />" +
     //        "</li>"
-            
+
 
     //        )
-           
+
     //    }
     //    count = parseInt(count) + 1;
     //}
     //image 1
-   if (smallImage.src.indexOf("No_image.png") < 0) 
-    {
+    if (smallImage.src.indexOf("No_image.png") < 0) {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
-       //count = parseInt(count) + 1;
+        //count = parseInt(count) + 1;
         if (count == 1) {
             var img = document.createElement("img");
             var api = localStorage.getItem("APIURL");
-                   // localStorage.setItem("ImagePath", imageURI);
+            // localStorage.setItem("ImagePath", imageURI);
             img.src = image;
             var src = document.getElementById("img1");
             img.id = "im1";
             src.appendChild(img);
-           // document.getElementById("im1").style.width = "100%";
+            // document.getElementById("im1").style.width = "100%";
             //document.getElementById("im1").style.height = "100%";
         }
         //image 2
@@ -3079,9 +3062,10 @@ function multimplyimage(imageURI)
             var src = document.getElementById("img2");
             img.id = "im2";
             src.appendChild(img);
-           // document.getElementById("im2").style.width = "100%";
-           // document.getElementById("im2").style.height = "100%";
+            // document.getElementById("im2").style.width = "100%";
+            // document.getElementById("im2").style.height = "100%";
         }
+
         //image 3
         if (count == 3) {
             var img = document.createElement("img");
@@ -3089,8 +3073,8 @@ function multimplyimage(imageURI)
             var src = document.getElementById("img3");
             img.id = "im3";
             src.appendChild(img);
-          //  document.getElementById("im3").style.width = "100%";
-           // document.getElementById("im3").style.height = "100%";
+            //  document.getElementById("im3").style.width = "100%";
+            // document.getElementById("im3").style.height = "100%";
         }
 
         //image 4
@@ -3100,7 +3084,7 @@ function multimplyimage(imageURI)
             var src = document.getElementById("img4");
             img.id = "im4";
             src.appendChild(img);
-           // document.getElementById("im4").style.width = "100%";
+            // document.getElementById("im4").style.width = "100%";
             //document.getElementById("im4").style.height = "100%";
         }
 
@@ -3111,15 +3095,14 @@ function multimplyimage(imageURI)
             var src = document.getElementById("img5");
             img.id = "im5";
             src.appendChild(img);
-          //  document.getElementById("im5").style.width = "100%";
-           // document.getElementById("im5").style.height = "100%";
+            //  document.getElementById("im5").style.width = "100%";
+            // document.getElementById("im5").style.height = "100%";
         }
-  }
-  if (count == 5)
-  {
-      count = 0;
-  }
-  
+    }
+    //if (count == 5) {
+    //    count = 0;
+    //}
+
 }
 function fun_AddItemInCart() {
     var Total = 0;
@@ -3149,11 +3132,11 @@ function fun_AddItemInCart() {
                                     "<p style='display:inline;float:left ;font-weight:bold;margin-top:3px;margin-top:-3px;'>" + data.WRate + "</p>" +
                                     "<p style='display:inline;float:left ;margin-top:3px;margin-top:-3px;'>&nbsp;=&nbsp;</p>" +
                                     "<p style='color:#137ab0;display:inline;float:left ;font-weight:bold;margin-top:3px;margin-top:-3px;font-size:13px' >" + amt + "</p>" +
-                                   
+
                                 "</a>" +
-                            "</li>" 
-                 
-                
+                            "</li>"
+
+
                     );
                 //$("#Itm_Grid").listview("refresh");
                 //$("#Itm_Grid").on("swiperight", ">li", function (e) {
@@ -3178,16 +3161,16 @@ function fun_AddItemInCart() {
                 //        });
                 //    });
                 //})
-                    Total = Number(Total) +Number(amt);
+                Total = Number(Total) + Number(amt);
 
-                
-                }
+
+            }
 
         }
     }
     Total = Total.toFixed(2);
     $("#amt").text(Total);
-    $("#cart-total-amt").text("Net Amount :-"+Total);
+    $("#cart-total-amt").text("Net Amount :-" + Total);
     //var a = localStorage.getItem("DelCharges");
     //var b = Total;
     //var c = (Number(b) + Number(a)).toFixed(2);
@@ -3243,7 +3226,7 @@ function RemoveItemFromCart() {
     index_d = 0;
     if (id >= 1) {
         var arr = '';
-        arr = localStorage.getItem("SelectedItemInfo");        
+        arr = localStorage.getItem("SelectedItemInfo");
         var splitArr = arr.split("$");
         var arrLength = splitArr.length;
         splitArr.splice(id, 1);
@@ -3326,14 +3309,14 @@ $(function () {
             },
             messages: {
                 noResults: function (resultsCount) {
-                            
+
                 },
                 results: function (resultsCount) {
 
                 }
             },
             //if any error occure
-           
+
             select: function (event, ui) {
                 $("#dr-info-body").removeClass("display-none");
                 textAnim('dr-info-body', 'zoomIn');
@@ -3353,34 +3336,31 @@ $(function () {
 });
 
 
-function chenregistration()
-{
+function chenregistration() {
     incre = "0";
-    var ptco= localStorage.getItem("PTCODE");
-    var code=ptco.substring(0,4);
+    var ptco = localStorage.getItem("PTCODE");
+    var code = ptco.substring(0, 4);
     now = new Date;
     var year = now.getFullYear();
-    if (year == code)
-    {
+    if (year == code) {
         alert("please valid your user contact system administrator ");
     }
-else
-    {
+    else {
         //localStorage.setItem("ClientCode", data);
         //localStorage.setItem("PTCODE", data);
 
-         SaveOrder();
+        SaveOrder();
     }
 
 }
 
-function SaveOrder() {    
+function SaveOrder() {
     //loadmsg = "Saving Data...";
     // $(".show-page-loading-msg").click();
     var smallImage = document.getElementById('sel_image');
-  
+
     var image = smallImage.src;
-   
+
     //img.src = api + "/VrImg/img_app/" + img1 + "";
     //         var src = document.getElementById("img01");
 
@@ -3391,16 +3371,14 @@ function SaveOrder() {
         textAnim('a8', 'bounceInDown');
         $("#del-area").focus();
     }
-    else
-    
-    {
-        
+    else {
+
         {
-        
+
             //UpdateArea(localStorage.getItem("Acode"), localStorage.getItem("PTCODE"));
             $("#progress").val(20);
             $(".parentDisable").show();
-            window.scrollTo(0, 0);        
+            window.scrollTo(0, 0);
             $("#ordSaveprog").show();
             textAnim('ordSaveprog', 'slideInLeft');
             var WebSerUrl = localStorage.getItem("APIURL");
@@ -3428,40 +3406,51 @@ function SaveOrder() {
                             var smallImage = document.getElementById('sel_image');
                             var image = smallImage.src;
                             var vrno_temp = {
-                                vrno:data.vrno+'_01'
+                                vrno: data.vrno + '_01'
                             }
+                            var i;
+                            for(parseInt(i);i<=count;i++)
+                            {
+                                count = count - 1;
                             if (smallImage.src.indexOf("No_image.png") < 0)
                             {
-                                //image 1
-                                //var imageURI = "assets/img/No_image.png";
-                                //filename = send(imageURI, data.vrno, "");
-                                //SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
-
-                                ////image 2
-                                //var imageURI1 = localStorage.getItem("ImagePath1");
-                                //var vrno1 = data.vrno ;
-                                //var vr = vrno1 + "_01";
-                                //filename1 = send(imageURI1, data.vrno, "");
-                                //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
-
-                                ////image 3
-                                //var imageURI2 = localStorage.getItem("ImagePath2");
-                                //var vrno2 = data.vrno + "_02";
-                                //filename2 = send(imageURI2, data.vrno, "");
-                                //SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
-
-                                ////image 4
-                                //var imageURI3 = localStorage.getItem("ImagePath3");
-                                //var vrno3 = data.vrno + "_03";
-                                //filename3 = send(imageURI3, data.vrno, "");
-                                //SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
-
-                                //image 5
-                                var imageURI4 = localStorage.getItem("ImagePath4");
-                                //var vrno4 = data.vrno + "_04";
-                                filename4 = send(imageURI4, data.vrno, "");
-                              //  SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
-                            }
+                                if (count == 0) {
+                                    //image 1
+                                    var imageURI = localStorage.getItem("ImagePath");
+                                    filename = send(imageURI, data.vrno, "");
+                                    SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                                }
+                                if (count ==1) {
+                                    //image 2
+                                    var imageURI1 = localStorage.getItem("ImagePath1");
+                                    var vrno1 = data.vrno;
+                                    var vr = vrno1 + "_01";
+                                    filename1 = send(imageURI1, data.vrno, "");
+                                    SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
+                                }
+                                if (count == 2) {
+                                    //image 3
+                                    var imageURI2 = localStorage.getItem("ImagePath2");
+                                    var vrno2 = data.vrno + "_02";
+                                    filename2 = send(imageURI2, data.vrno, "");
+                                    SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
+                                }
+                                if (count == 3 ){
+                                    //image 4
+                                    var imageURI3 = localStorage.getItem("ImagePath3");
+                                    var vrno3 = data.vrno + "_03";
+                                    filename3 = send(imageURI3, data.vrno, "");
+                                    SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
+                                }
+                                if(count==4){
+                                    //image 5
+                                    var imageURI4 = localStorage.getItem("ImagePath4");
+                                    //var vrno4 = data.vrno + "_04";
+                                    filename4 = send(imageURI4, data.vrno, "");
+                                    //  SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
+                                }
+                        }
+                    }
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
                             SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
@@ -3494,9 +3483,13 @@ function SaveOrder() {
             });
         }
     }
-   
+
+    if(count==5){
+        
+        count==0;}
+
 }
-    
+
 
 function SaveOrderinGBC(vrno, name, amt) {
     // var amt = $("#Ordtot").text().toString().replace("Rs.", "");
@@ -3526,7 +3519,7 @@ function SaveOrderinGBC(vrno, name, amt) {
     });
 }
 function getUserDataForOrderPlace(val) {
-   // var Remark =Remark;
+    // var Remark =Remark;
     var pcode;
     var series;
     var pname, ptcode, dname, dcode, dadd;
@@ -3556,7 +3549,7 @@ function getUserDataForOrderPlace(val) {
             "series": series,
             "EMGORD": emrg,
             "Remark": Remark
-            
+
         };
         return data;
     }
@@ -3573,7 +3566,7 @@ function getUserDataForOrderPlace(val) {
             "FDName": Fdname,
             "series": series,
             "EMGORD": emrg,
-              "Remark": Remark
+            "Remark": Remark
         };
         return data;
     }
@@ -3581,7 +3574,7 @@ function getUserDataForOrderPlace(val) {
 }
 
 function getArrayOfOrder() {
-    try{
+    try {
         var arr;
         arr = localStorage.getItem("SelectedItemInfo");
         if (arr != null) {
@@ -3597,10 +3590,9 @@ function getArrayOfOrder() {
         alert(e);
     }
 }
-function cancel_order()
-{
+function cancel_order() {
     emrg = "";
-  //  $("#ordSaveprog").show();
+    //  $("#ordSaveprog").show();
     $("#emeregency_cancel").text("Emeregency Order Cancel");
 
 
@@ -3615,7 +3607,7 @@ function SetVrDeetail(vrno, TotalAmt, pcode, data) {
         setTimeout(
             function abc() {
                 $("#progress").val(100);
-                textAnim('ordSaveprog', 'slideOutRight');            
+                textAnim('ordSaveprog', 'slideOutRight');
                 setTimeout(function xyz() {
                     $("#ordSaveprog").hide();
                 }, 1000);
@@ -3644,9 +3636,9 @@ function SetVrDeetail(vrno, TotalAmt, pcode, data) {
         for (var i = 0; i < itm.length; i++) {
             var j = i + 1;
             $("#div_itemList tr:last").after(
-                "<tr><td style='width:50px;text-align:center'>" + j + ".</td> <td  style='width:340px;'>" + itm[i].INAME + "</td><td style='text-align:center'>" + itm[i].Qty + "+" + itm[i].free + "</td><td style=' text-align:right;'>" + (Number(itm[i].Rate)*Number(itm[i].Qty)).toFixed(4) + "</td></tr></tbody>");
+                "<tr><td style='width:50px;text-align:center'>" + j + ".</td> <td  style='width:340px;'>" + itm[i].INAME + "</td><td style='text-align:center'>" + itm[i].Qty + "+" + itm[i].free + "</td><td style=' text-align:right;'>" + (Number(itm[i].Rate) * Number(itm[i].Qty)).toFixed(4) + "</td></tr></tbody>");
         }
-       
+
     } catch (e) {
         //alert(e.message);
     }
@@ -3846,11 +3838,11 @@ function getOrderHistory() {
             success: function (data) {
                 $("#Ul-ord-history").html("");
                 $(".hide-page-loading-msg").click();
-                if (data == null || data=="") {
+                if (data == null || data == "") {
                     $("#Ul-ord-history").append("<ul  data-role='listview' data-inset='true'  class='touch ui-listview ui-listview-inset ui-corner-all ui-shadow' data-icon='false' data-split-icon='delete'>" +
                             "<li class=' ui-li-static ui-body-inherit ui-first-child ui-last-child'> No Record Available</li></ul>");
                 }
-                else {                    
+                else {
                     var itm = data
                     for (var i = 0; i < itm.length; i++) {
                         $("#Ul-ord-history").append("<ul  id='' data-role='listview'  data-inset='true'  class='touch ui-listview ui-listview-inset ui-corner-all ui-shadow' data-icon='false' data-split-icon='delete'>" +
@@ -3858,7 +3850,7 @@ function getOrderHistory() {
                             "<a style='margin-top:-6px;margin-left:6px;font-weight: bold;color:#1ed40a;'>" + itm[i].status + "</a>" +
                                       "<table>" +
                                           "<tr>" +
-                                              "<td rowspan='2'>" +                                                  
+                                              "<td rowspan='2'>" +
                                                   "<img id='vrnoimg" + itm[i].vrno + "' src='assets/img/No_image.png' style='width:100px;height:120px;'/>" +
                                               "</td>" +
                                           "</tr>" +
@@ -3877,7 +3869,7 @@ function getOrderHistory() {
                                               "</td>" +
                                           "</tr>" +
                                       "</table>" +
-                                  "</li>"+
+                                  "</li>" +
                                   "<li class=' ui-li-static ui-body-inherit ui-first-child ui-last-child' onclick=ReOrder('" + itm[i].vrno + "')>" +
                                   "<a style='margin-top:-6px;font-weight: bold;font-size:15px;'>Click Me To ReOrder... </a>" +
                                   "</li>" +
@@ -3913,8 +3905,8 @@ function ReOrder(VrNo) {
         var IsPre = '0';
         loadmsg = "Please Wait While Loading Order...";
         $(".show-page-loading-msg").click();
-        var WebSerUrl = localStorage.getItem("APIURL");        
-        WebSerUrl = WebSerUrl + "/Order/GetOrdDataOnVrno?VrNo=" + VrNo;        
+        var WebSerUrl = localStorage.getItem("APIURL");
+        WebSerUrl = WebSerUrl + "/Order/GetOrdDataOnVrno?VrNo=" + VrNo;
         $.ajax({
             url: WebSerUrl,
             type: "get",
@@ -3936,10 +3928,10 @@ function ReOrder(VrNo) {
                             //document.getElementById('cart-pre').src = document.getElementById("vrnoimg" + VrNo).src;
                             //document.getElementById('sel_image').src = document.getElementById("vrnoimg" + VrNo).src;
                             //localStorage.setItem("ImagePath", document.getElementById("vrnoimg" + VrNo).src);
-                        } else {                            
+                        } else {
                             Close_img();
                         }
-                        
+
                         var itm = data.items;
                         for (var i = 0; i < itm.length; i++) {
                             ClearItemInfo();
@@ -3956,7 +3948,7 @@ function ReOrder(VrNo) {
                             $("#PackExp").text(itm[i].packing);
                             $("#lblRetailrate").text(itm[i].Rate);
                             $("#lblRate").text(itm[i].WRate);
-                            $("#lblContent").text(itm[i].GNAme);                            
+                            $("#lblContent").text(itm[i].GNAme);
                             fun_AddToCart();
                         }
                         if (IsPre != "1") {
@@ -3970,13 +3962,13 @@ function ReOrder(VrNo) {
                 }
             },
             error: function (event) {
-                $(".hide-page-loading-msg").click();                
+                $(".hide-page-loading-msg").click();
             }
         });
 
     } catch (e) {
         alert(e.message);
-    }   
+    }
 }
 
 function EditProfile() {
@@ -4000,17 +3992,18 @@ function EditProfile() {
 }
 
 function TrackOrder(Vrno, name) {
-    try{
+    try {
         AddActiveClass(6);
         ToggleMenu(4);
-        BindOrdVrNo();    }
+        BindOrdVrNo();
+    }
     catch (e) {
         alert(e.message);
     }
 }
 
-function Track_Order() {    
-    window.location.href = "#profile";    
+function Track_Order() {
+    window.location.href = "#profile";
     TrackOrder();
 }
 
@@ -4067,7 +4060,7 @@ function UpdateProfile() {
                         loadmsg = "Sending OTP.";
                         UpdateProfileData();
                         SendingOTP();
-                        
+
                     }
                 },
                 //if any error occure
@@ -4079,10 +4072,10 @@ function UpdateProfile() {
         }
         UpdateProfileData();
     }
-    
+
 }
 
-function UpdateArea(a,p) {
+function UpdateArea(a, p) {
     $.ajax({
         url: localStorage.getItem("APIURL") + "/Values/UpdateArea?acode=" + a + "&Ptcode=" + p,
         type: "GET",
@@ -4096,14 +4089,14 @@ function UpdateArea(a,p) {
     })
 }
 
-function UpdateProfileData() {    
+function UpdateProfileData() {
     loadmsg = "Saving Data...";
     $(".show-page-loading-msg").click();
     var DrName = $("#pro_txtDocname").val();
     var DrCode = localStorage.getItem("DocCode");
     var state = $("#Textstate").val();
     if (state == "") {
-        localStorage.setItem("State","");
+        localStorage.setItem("State", "");
     } else {
         if (localStorage.getItem("State") != "" && localStorage.getItem("State") != null) {
             state = localStorage.getItem("State");
@@ -4119,7 +4112,7 @@ function UpdateProfileData() {
     }
     var area = $("#Textarea").val();
     if (area == "") {
-        localStorage.setItem("Area","")
+        localStorage.setItem("Area", "")
     } else {
         if (localStorage.getItem("Area") != "" && localStorage.getItem("Area") != null) {
             area = localStorage.getItem("Area");
@@ -4128,7 +4121,7 @@ function UpdateProfileData() {
     var WebSerUrl = localStorage.getItem("APIURL");
     if (WebSerUrl == "" || WebSerUrl == null) {
         var gbcUrl = GBCServicePath + "/Values/UpdatePartyData?PtCode=" + $("#pro_txtReg").val() + "&Ptname=" + $("#pro_txtname").val() + "&MoNo=" + $("#pro_txtmo").val() + "&Email=" + $("#pro_txtemail").val() + "&Add=" + $("#pro_txtadd").val() + "&Stcode=" + state + "&CtCode=" + city + "&area=" + area + "&textstate=" + $("#Textstate").val() + "&textcity=" + $("#Textcity").val() + "&textarea=" + $("#Textarea").val();
-        
+
         $.ajax({
             url: gbcUrl,
             type: "get",
@@ -4136,7 +4129,7 @@ function UpdateProfileData() {
             processData: true,
             success: function (data) {
                 debugger;
-                $(".hide-page-loading-msg").click();                
+                $(".hide-page-loading-msg").click();
                 localStorage.setItem("PTNAME", $("#pro_txtname").val());
                 localStorage.setItem("PTNO", $("#pro_txtmo").val());
                 localStorage.setItem("PTEMAIL", $("#pro_txtemail").val());
@@ -4145,11 +4138,11 @@ function UpdateProfileData() {
                 localStorage.setItem("City", localStorage.getItem("city"));
                 localStorage.setItem("Area", localStorage.getItem("area"));
                 //localStorage.setItem("DocCode", DrCode);
-               // localStorage.setItem("DocName", DrName);
+                // localStorage.setItem("DocName", DrName);
 
                 $("#profile_name").text($("#pro_txtname").val());
                 alert('Profile Update Successfully');
-               
+
                 window.location.href = "#page-con";
             },
             error: function (event) {
@@ -4159,7 +4152,7 @@ function UpdateProfileData() {
             }
         });
     } else {
-      //  WebSerUrl = WebSerUrl + "/Values/UpdatePatientData?PtCode=" + $("#pro_txtReg").val() + "&Ptname=" + $("#pro_txtname").val() + "&MoNo=" + $("#pro_txtmo").val() + "&Email=" + $("#pro_txtemail").val() + "&Add=" + $("#pro_txtadd").val() + "&Stcode=" + state + "&CtCode=" + city + "&area=" + area + "&DrName=" + DrName + "&DrCode=" + DrCode;
+        //  WebSerUrl = WebSerUrl + "/Values/UpdatePatientData?PtCode=" + $("#pro_txtReg").val() + "&Ptname=" + $("#pro_txtname").val() + "&MoNo=" + $("#pro_txtmo").val() + "&Email=" + $("#pro_txtemail").val() + "&Add=" + $("#pro_txtadd").val() + "&Stcode=" + state + "&CtCode=" + city + "&area=" + area + "&DrName=" + DrName + "&DrCode=" + DrCode;
         var gbcUrl = WebSerUrl + "/Values/UpdatePartyData?PtCode=" + $("#pro_txtReg").val() + "&Ptname=" + $("#pro_txtname").val() + "&MoNo=" + $("#pro_txtmo").val() + "&Email=" + $("#pro_txtemail").val() + "&Add=" + $("#pro_txtadd").val() + "&Stcode=" + state + "&CtCode=" + city + "&area=" + area + "&textstate=" + $("#Textstate").val() + "&textcity=" + $("#Textcity").val() + "&textarea=" + $("#Textarea").val();
         $.ajax({
             url: gbcUrl,
@@ -4177,10 +4170,10 @@ function UpdateProfileData() {
                     localStorage.setItem("State", $("#Textstate").val());
                     localStorage.setItem("City", $("#Textcity").val());
                     localStorage.setItem("Area", $("#Textarea").val());
-                   // localStorage.setItem("DocCode", DrCode);
-                   // localStorage.setItem("DocName", DrName);
+                    // localStorage.setItem("DocCode", DrCode);
+                    // localStorage.setItem("DocName", DrName);
                     $("#profile_name").text($("#pro_txtname").val());
-                    alert('Profile Update Successfully');                  
+                    alert('Profile Update Successfully');
                 }
                 else {
                     alert('Sorry!!! Try After Some Time' + data);
@@ -4223,7 +4216,7 @@ function GetActiveSupplierList() {
         cache: false,
         success: function (data) {
             $(".hide-page-loading-msg").click();
-            if (data == null || data=="") {
+            if (data == null || data == "") {
                 $(".hide-page-loading-msg").click();
                 $("#Select_Grid").html("");
                 $("#Select_Grid").append("<ul  data-role='listview' data-inset='true'  class='touch ui-listview ui-listview-inset ui-corner-all ui-shadow' data-icon='false' data-split-icon='delete'>" +
@@ -4252,7 +4245,7 @@ function GetActiveSupplierList() {
                         if (data1.ServiceStatus == true) {
                             $("#b-status").text("Service Is Available");
                             document.getElementById("b-status").style.color = "#1ed40a";
-                        } else {                            
+                        } else {
                             $("#b-status").text("Service Is Not Available");
                             document.getElementById("b-status").style.color = "#c10f0f";
                         }
@@ -4266,10 +4259,10 @@ function GetActiveSupplierList() {
 }
 
 
-function GetOrderPartyUserDetail() {   
-    $("#Cust").text("Name:"+ localStorage.getItem("PTNAME") + " (" + localStorage.getItem("PTCODE") + ")");
-    $("#CustNo").text("Mobile No: "+localStorage.getItem("PTNO"));
-    $("#CustEmail").text("Email Id: "+localStorage.getItem("PTEMAIL"));
+function GetOrderPartyUserDetail() {
+    $("#Cust").text("Name:" + localStorage.getItem("PTNAME") + " (" + localStorage.getItem("PTCODE") + ")");
+    $("#CustNo").text("Mobile No: " + localStorage.getItem("PTNO"));
+    $("#CustEmail").text("Email Id: " + localStorage.getItem("PTEMAIL"));
     $("#CustAdd").text("Address: " + localStorage.getItem("PTADD"));
     $("#txtbillingAdd").val(localStorage.getItem("PTADD"));
     $("#dr-name").val(localStorage.getItem("DocName"));
@@ -4278,7 +4271,7 @@ function GetOrderPartyUserDetail() {
     $("#del-area").val($("#Textarea").val());
     var a = localStorage.getItem("DelCharges");
     $("#charges").text(Number(a).toFixed(2));
-   
+
 }
 
 function ShowItemList(id) {
@@ -4290,7 +4283,7 @@ function onPhotoDataSuccessProfile(imageURI) {  ///////////////
     window.location.href = "#profile";
     var smallImage = document.getElementById('Profile-img');
     smallImage.src = imageURI;
-    localStorage.setItem("Profile-img", imageURI);    
+    localStorage.setItem("Profile-img", imageURI);
 }
 
 function SetProfilePhoto() {
@@ -4302,7 +4295,7 @@ function SetProfilePhoto() {
         var smallImage = document.getElementById('Profile-img');
         smallImage.src = localStorage.getItem("Profile-img");
     }
-    
+
 }
 
 function getPhotoProfile(source) {  ////////////
@@ -4355,7 +4348,7 @@ function resolveOnSuccess(entry) {
                 fileSys.root.getDirectory(myFolderApp,
                                 { create: true, exclusive: true },
                                 function (directory) {
-                                    try{                                        
+                                    try {
                                         alert(directory.fullPath); //debugging
                                         entry.moveTo(directory, newFileName, successMove, resOnErrorMove);
                                     } catch (e) {
@@ -4364,15 +4357,15 @@ function resolveOnSuccess(entry) {
                                 },
                                 resOnError);
             },
-       resOnErrorFile);            
+       resOnErrorFile);
         }, function (e) {
-            alert('Error'+ e.message);
+            alert('Error' + e.message);
         });
-               
+
     }
 }
 
-function successMove(entry) {    
+function successMove(entry) {
     var imgLoc = folderPath + entry.fullPath;
     alert(imgLoc);
     localStorage.setItem("ImagePath", imgLoc);
@@ -4382,7 +4375,7 @@ function resOnErrorFile(error) {
     alert(" From Request File System " + FolderName + " . Error Code:-" + error.code);
 }
 function resOnError(error) {
-    alert("Failed To Create Folder " + FolderName + " . Error Code:-" + error.code );    
+    alert("Failed To Create Folder " + FolderName + " . Error Code:-" + error.code);
 }
 
 function resOnErrorMove(error) {
@@ -4400,7 +4393,7 @@ function SubstitudeItemList() {
         dataType: "json",
         cache: false,
         success: function (data) {
-            try{
+            try {
                 $(".hide-page-loading-msg").click();
                 var itm = data;
                 $("#Substitude_Grid").html("");
@@ -4428,7 +4421,7 @@ function SubstitudeItemList() {
     });
 }
 
-function SetDataFromSubstitude(icode, rate, mrp, iname, pack, gname,Wrate) {
+function SetDataFromSubstitude(icode, rate, mrp, iname, pack, gname, Wrate) {
     pack = pack.replace("$", "'");
     $("#lblItmCode").text(icode);
     $("#lblRetailrate").text(rate);
@@ -4442,7 +4435,7 @@ function SetDataFromSubstitude(icode, rate, mrp, iname, pack, gname,Wrate) {
     $("#a_Item-Info-Search-Body").click();
 }
 
-function OrdTrackFromHistory(Vrno, name) {    
+function OrdTrackFromHistory(Vrno, name) {
     TrackOrder(Vrno, name);
 }
 
@@ -4478,25 +4471,25 @@ function OrderTrack(Vrno, name) {
     $("#trackVrno").text("");
     $("#trackVrdate").text("");
     $("#lblStatus").text("");
-    loadmsg="Loading Order Details."
+    loadmsg = "Loading Order Details."
     $(".hide-page-loading-msg").click();
-    var WebSerUrl = localStorage.getItem("APIURL") + "/Order/GetOrderTrackingDetail?Vrno=" + Vrno;    
+    var WebSerUrl = localStorage.getItem("APIURL") + "/Order/GetOrderTrackingDetail?Vrno=" + Vrno;
     $.ajax({
         url: WebSerUrl,
         type: "GET",
         dataType: "json",
         cache: false,
         success: function (data) {
-            try{
+            try {
                 $("#DelImg").addClass("track-disable");
                 $("#DispImg").addClass("track-disable");
                 $("#BillImg").addClass("track-disable");
                 $("#OPLImg").addClass("track-disable");
                 $(".hide-page-loading-msg").click();
                 $("#dpname").text(name);
-                $("#trackVrno").text("Ord VrNO: " +data.VRNO);
+                $("#trackVrno").text("Ord VrNO: " + data.VRNO);
                 $("#trackVrdate").text(data.TRCode);
-                $("#dOrdVr").text("Ord VrNO: "+data.VRNO);
+                $("#dOrdVr").text("Ord VrNO: " + data.VRNO);
                 $("#dOrdDate").text(data.TRCode);
                 $("#dOrdAmt").text("Ord Amt: " + data.ORAMT.toFixed(2));
                 if (data.Status != "CNL") {
@@ -4505,7 +4498,7 @@ function OrderTrack(Vrno, name) {
                     $("#lblStatus").text("Order Placed");
                     document.getElementById("trackVrno").style.color = "#137ab0";
                     if (data.Status == "BEP" || data.Status == "DIS" || data.Status == "DLV" || data.Status == "RCD") {
-                        try{
+                        try {
                             $("#lblStatus").text("Bill Prepared");
                             $("#BillImg").removeClass("track-disable");
                             $("#dBillVr").text("Bill VrNo: " + data.ORDERNO);
@@ -4516,7 +4509,7 @@ function OrderTrack(Vrno, name) {
                         } catch (e) {
                             alert(e.message);
                         }
-                        if (data.Status == "DIS" || data.Status == "DLV" ||  data.Status == "RCD") {
+                        if (data.Status == "DIS" || data.Status == "DLV" || data.Status == "RCD") {
                             $("#lblStatus").text("Dispatched");
                             $("#DispImg").removeClass("track-disable");
                             $("#Label5").text("Dispacted Info:");
@@ -4575,7 +4568,7 @@ function OrderTrack(Vrno, name) {
                     else {
                         $("#divdsp").hide();
                     }
-                
+
                 }
                 else {
                     clearInterval(a);
@@ -4591,7 +4584,7 @@ function OrderTrack(Vrno, name) {
                 }
             }
             catch (e) {
-                
+
             }
         },
         error: function (d) {
@@ -4610,7 +4603,7 @@ function BindOrdVrNo() {
     //var WebSerUrl = GBCServicePath;
     WebSerUrl = localStorage.getItem("APIURL");
     WebSerUrl = WebSerUrl + "/Order/OrderVrNOList?PtCode=" + Code;
-   
+
     $.ajax({
         url: WebSerUrl,
         type: "GET",
@@ -4662,7 +4655,7 @@ function initApp() {
         if (!SMS) { alert('SMS plugin not ready'); return; }
 
         document.addEventListener('onSMSArrive', function (e) {
-           
+
             loadmsg = "Verifying No.";
             $(".show-page-loading-msg").click();
             var data = e.data;
@@ -4697,18 +4690,18 @@ function initApp() {
                                 $("#txtotp").val(localStorage.getItem("OTP"));
                                 closeVerification();
                                 CheckOTP();
-                               
+
                             }
-                            else {                                
+                            else {
                             }
                         }
-                        else {                            
+                        else {
                         }
                         closeVerification();
                         break;
                     }
                     else {
-                       
+
                     }
                 }
             }
@@ -4787,7 +4780,7 @@ function deleteLastSMS() {
     });
 }
 function restoreAllSMS() {
-    
+
     if (SMS) SMS.restoreSMS(smsList, function (n) {
         // clear the list if restore successfully
         smsList.length = 0;
@@ -4799,19 +4792,19 @@ function restoreAllSMS() {
 }
 function startWatch() {
     try {
-       
+
         if (SMS) SMS.startWatch(function () {
-         
+
             update('watching', 'watching started');
         }, function () {
-           
+
             updateStatus('failed to start watching');
         });
-    }catch(e){
+    } catch (e) {
     }
 }
 function stopWatch() {
-    try{
+    try {
         if (SMS) SMS.stopWatch(function () {
             update('watching', 'watching stopped');
         }, function () {
@@ -4834,7 +4827,7 @@ function toggleIntercept() {
     $('button#enable_intercept').text(interceptEnabled ? 'Disable' : 'Enable');
 }
 
-function ShowOffer() {    
+function ShowOffer() {
     window.location.href = "#div-offer";
 }
 
@@ -4860,7 +4853,7 @@ function home_click() {
     $("#sliderFrame").show();
 }
 
-function ProfileOrMenu() {    
+function ProfileOrMenu() {
     if (APPType == "@") {
         window.location.href = "#profile";
         GetActiveSupplierList();
@@ -4913,8 +4906,8 @@ function GetDataFromMobNo() {
 function GetDataFromRegCode() {
     WebSerUrl = localStorage.getItem("APIURL");
     $.ajax({
-         //url: GBCServicePath + "/Values/getDataFromRegCode1?code=" + $("#txt-clientCode").val(),
-       url: WebSerUrl + "/Values/getDataFromRegCode1?code=" + $("#txt-clientCode").val(),
+        //url: GBCServicePath + "/Values/getDataFromRegCode1?code=" + $("#txt-clientCode").val(),
+        url: WebSerUrl + "/Values/getDataFromRegCode1?code=" + $("#txt-clientCode").val(),
         type: "GET",
         dataType: "json",
         cache: false,
@@ -4922,7 +4915,7 @@ function GetDataFromRegCode() {
             str = data.split('|')
             localStorage.setItem("ClientCode", str[4]);
             localStorage.setItem("PTCODE", str[4]);
-           $(".hide-page-loading-msg").click();
+            $(".hide-page-loading-msg").click();
             if (data != "") {
                 var arry = data.split('<|>');
                 if (confirm("Client Detail of entered Registration Code is\nName : " + arry[0] + "\nMobile No : " + arry[3] + "\nAddress : " + arry[1] + "\n\nWish to continue to send OTP No In Registered Mobile No.")) {
@@ -5221,7 +5214,7 @@ $(function () {
                 document.getElementById('div10').style.display = "block";
                 $("#txtOrderParty-add").text(ui.item.Add + " (" + ui.item.MobNo + ")");
                 // $("#txt-clientMobno").val( ui.item.MobNo);
-                
+
                 $("#txtMoNO").val(ui.item.MobNo);
                 $("#txt-clientCode").val(ui.item.Pcode);
                 var pcode = ui.item.Pcode;
@@ -5598,7 +5591,7 @@ function GetLastWalletTransc() {
                                   "</td>" +
                               "</tr>" +
                           "</table>" +
-                          "<progress id='"+i+"' max='100'  value='30'></progress>"+
+                          "<progress id='" + i + "' max='100'  value='30'></progress>" +
                        "</li>");
                     if (data[i].status == "OPL") {
                         $("#" + i).val(30);
@@ -5641,10 +5634,10 @@ function ShowMsgCredit(val) {
 }
 function ShowMsgOrdSave() {
     $("#Div12").html(" <center>" +
-                    "<img id='thank' alt='Thank You' style='width:80px;'/>"+
-                "<label style='padding-top:10px'>Your Order Received! We will Notify You For Further Order Details."+
-                "</label>"+
-                    "<span style='color:red;font-size:12px;'> Please Note:- Order Amount May Be Change When Order Is Proceed. </span>"+
+                    "<img id='thank' alt='Thank You' style='width:80px;'/>" +
+                "<label style='padding-top:10px'>Your Order Received! We will Notify You For Further Order Details." +
+                "</label>" +
+                    "<span style='color:red;font-size:12px;'> Please Note:- Order Amount May Be Change When Order Is Proceed. </span>" +
                     "</center>   ");
     $('#thank').attr('src', 'assets/img/thanku.jpg');
 }
@@ -5695,12 +5688,12 @@ function CheckCreditGet() {
 
 function SendNotif(val) {
     $.ajax({
-        url: localStorage.getItem("APIURL") + "/Connection/SendNotify?PtCode=" + localStorage.getItem("ClientCode")+"&Vrno="+val,
+        url: localStorage.getItem("APIURL") + "/Connection/SendNotify?PtCode=" + localStorage.getItem("ClientCode") + "&Vrno=" + val,
         type: "GET",
         dataType: "json",
         cache: false,
         success: function (data) {
-           
+
         },
         error: function (xmlHttpRequest, textStatus, errorThrown) {
             alert(xmlHttpRequest.responseText);
@@ -5725,7 +5718,7 @@ function updateStatusRcd() {
             }
         });
     } else {
-       
+
     }
 }
 
@@ -5788,7 +5781,7 @@ function download(URL, Folder_Name, File_Name) {
         fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
         // download function call
         filetransfer(download_link, fp);
-        
+
         //function onResolveSuccess(fileEntry) {
         //    alert(" Yashaswi "+ fileEntry.toNativeURL());
         //}
@@ -5816,7 +5809,7 @@ function download(URL, Folder_Name, File_Name) {
 //Third step for download a file into created folder
 
 function filetransfer(download_link, fp) {
-    try{
+    try {
         alert(download_link);
         alert(DownloadPath);
         DownloadPath = fileSystem.root.toURL() + "check1" + "." + "jpeg";
@@ -5844,10 +5837,10 @@ function filetransfer(download_link, fp) {
 
 
 function Dwn() {
-   
+
     alert("Inside Dwn");
     try {
-       
+
 
         //////Try6
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
@@ -5906,7 +5899,7 @@ function Dwn() {
 
         ////Try4 
         //var url = "http://tiaapp.goyalonline.in/vrimg/GC16000356.jpeg";
- 
+
         //// we need to access LocalFileSystem
         //window.requestFileSystem(window.LocalFileSystem.PERSISTENT, 0, function (fs) {
         //    // create the download directory is doesn't exist
