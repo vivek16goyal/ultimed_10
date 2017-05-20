@@ -2368,24 +2368,24 @@ function onPhotoURISuccess(imageURI) {  ///////////
     window.location.href = "#ImageSelect";
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;
-    count = count + 1;
-    if (count == 1) {
+  //  count = count + 1;
+    if (count == 0) {
         document.getElementById('Img16').src = imageURI;
         localStorage.setItem("ImagePath", imageURI);
     }
-    if (count == 2) {
+    if (count == 1) {
         document.getElementById('Img15').src = imageURI;
         localStorage.setItem("ImagePath1", imageURI);
     }
-    if (count == 3) {
+    if (count == 2) {
         document.getElementById('Img19').src = imageURI;
         localStorage.setItem("ImagePath2", imageURI);
     }
-    if (count == 4) {
+    if (count == 3) {
         document.getElementById('Img20').src = imageURI;
         localStorage.setItem("ImagePath3", imageURI);
     }
-    if (count == 5) {
+    if (count == 4) {
         document.getElementById('Img21').src = imageURI;
         localStorage.setItem("ImagePath4", imageURI);
     }
@@ -2403,20 +2403,20 @@ function onPhotoDataSuccess(imageURI) {  ///////////////
     window.location.href = "#ImageSelect";
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;
-    count = count + 1;
-    if (count == 1) {
+    //count = count + 1;
+    if (count == 0) {
         document.getElementById('Img16').src = imageURI;
     }
-    if (count == 2) {
+    if (count == 1) {
         document.getElementById('Img15').src = imageURI;
     }
-    if (count == 3) {
+    if (count == 2) {
         document.getElementById('Img19').src = imageURI;
     }
-    if (count == 4) {
+    if (count == 3) {
         document.getElementById('Img20').src = imageURI;
     }
-    if (count == 5) {
+    if (count == 4) {
         document.getElementById('Img21').src = imageURI;
     }
     // localStorage.setItem("ImagePath", imageURI);
@@ -3043,7 +3043,7 @@ function multimplyimage(imageURI) {
     if (smallImage.src.indexOf("No_image.png") < 0) {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
-        //count = parseInt(count) + 1;
+        count = parseInt(count) + 1;
         if (count == 1) {
             var img = document.createElement("img");
             var api = localStorage.getItem("APIURL");
@@ -3409,7 +3409,8 @@ function SaveOrder() {
                                 vrno: data.vrno 
                             }
                            // var i ;
-                           // parseInt( i );
+                            // parseInt( i );
+
                             if (smallImage.src.indexOf("No_image.png") < 0)
                             {
                             for(var i=0;i<=count;i++)
