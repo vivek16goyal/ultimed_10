@@ -3456,7 +3456,13 @@ function SaveOrder() {
                     }
                             debugger;
                             SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
-                            SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
+                             SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
+                            var vrno = data.vrno;
+                            var imageURI1 = localStorage.getItem("ImagePath1");
+                            var vrno1 = data.vrno;
+                            var vr = vrno + "_01";
+                            filename1 = send(imageURI1, vr, "");
+                           
                             if (smallImage.src.indexOf("No_image.png") < 0) {
                                 document.getElementById('Img1').src = "";
                                 document.getElementById('Img2').src = "";
@@ -3465,11 +3471,6 @@ function SaveOrder() {
                                 document.getElementById('Img4').src = "";
                                 document.getElementById('Img5').src = "";
                             }
-                            var vrno = data.vrno;
-                            var imageURI1 = localStorage.getItem("ImagePath1");
-                            var vrno1 = data.vrno;
-                            var vr = vrno + "_01";
-                            filename1 = send(imageURI1, vr, "");
                             setTimeout(function abc() {
                                 SendNotif(vrno);
                             }, 7000);
