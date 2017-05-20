@@ -3483,6 +3483,12 @@ function SaveOrder() {
 
                                 document.getElementById('Img_4').src = "";
                                 document.getElementById('Img_5').src = "";
+                                localStorage.setItem("ImagePath", "")
+                                localStorage.setItem("ImagePath1", "")
+                                localStorage.setItem("ImagePath2", "")
+
+                                localStorage.setItem("ImagePath3", "")
+                                localStorage.setItem("ImagePath4", "")
                             }
                             setTimeout(function abc() {
                                 SendNotif(vrno);
