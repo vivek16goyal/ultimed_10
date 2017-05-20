@@ -3406,7 +3406,7 @@ function SaveOrder() {
                             var smallImage = document.getElementById('sel_image');
                             var image = smallImage.src;
                             var vrno_temp = {
-                                vrno: data.vrno + '_01'
+                                vrno: data.vrno 
                             }
                            // var i ;
                            // parseInt( i );
@@ -3465,6 +3465,10 @@ function SaveOrder() {
                                 document.getElementById('Img5').src = "";
                             }
                             var vrno = data.vrno;
+                            var imageURI1 = localStorage.getItem("ImagePath1");
+                            var vrno1 = data.vrno;
+                            var vr = vrno + "_01";
+                            filename1 = send(imageURI1, vr, "");
                             setTimeout(function abc() {
                                 SendNotif(vrno);
                             }, 7000);
@@ -3474,14 +3478,20 @@ function SaveOrder() {
                     else {
                         alert("Save Failed. Please Try Again!!!");
                     }
-                    $("#progress").val(75);
+                  //  $("#progress").val(75);
+                },
+                select: function (event, ui) {
+                    debugger;
+                    localStorage.setItem("label_vrno", ui.data.vrno)
+                   // var wrate = ui.data.vrno;
                 },
                 error: function (xmlHttpRequest, textStatus, errorThrown) {
                     $(".hide-page-loading-msg").click();
                     alert("Please Try Again!!!" + xmlHttpRequest.responseText);
                     $("#ordSaveprog").hide();
                     $(".parentDisable").hide();
-                }
+                },
+                
             });
         }
     }
