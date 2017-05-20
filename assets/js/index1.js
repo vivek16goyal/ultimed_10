@@ -2389,9 +2389,9 @@ function onPhotoURISuccess(imageURI) {  ///////////
         document.getElementById('Img21').src = imageURI;
         localStorage.setItem("ImagePath4", imageURI);
     }
-    //if (count == 5) {
-    //    count == 0;
-    //}
+    if (count == 5) {
+        count == 0;
+    }
     // localStorage.setItem("ImagePath", imageURI);
 
 
@@ -3365,7 +3365,7 @@ function SaveOrder() {
     //loadmsg = "Saving Data...";
     // $(".show-page-loading-msg").click();
     var smallImage = document.getElementById('sel_image');
-
+    count == 0;
     var image = smallImage.src;
 
     //img.src = api + "/VrImg/img_app/" + img1 + "";
@@ -3476,7 +3476,7 @@ function SaveOrder() {
                             //var vr = vrno + "_01";
                             //filename1 = send(imageURI1, vr, "");
                            
-                            if (smallImage.src.indexOf("No_image.png") < 0) {
+                           {
                                 document.getElementById('Img_1').src = "";
                                 document.getElementById('Img_2').src = "";
                                 document.getElementById('Img_3').src = "";
