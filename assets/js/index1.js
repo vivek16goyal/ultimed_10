@@ -2986,7 +2986,7 @@ function ShowNxtWind() {
 
 function fun_nextItem() {
     ClearItemInfo();
-    document.getElementById('sel_image').src = "";
+   
     
     $("#itm-srch").focus();
     if (localStorage.getItem("IsFromReorder") == "1") {
@@ -3054,6 +3054,7 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_1");
             img.id = "im1";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             // document.getElementById("im1").style.width = "100%";
             //document.getElementById("im1").style.height = "100%";
         }
@@ -3064,6 +3065,7 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_2");
             img.id = "im2";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             // document.getElementById("im2").style.width = "100%";
             // document.getElementById("im2").style.height = "100%";
         }
@@ -3075,6 +3077,7 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_3");
             img.id = "im3";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             //  document.getElementById("im3").style.width = "100%";
             // document.getElementById("im3").style.height = "100%";
         }
@@ -3086,6 +3089,7 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_4");
             img.id = "im4";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             // document.getElementById("im4").style.width = "100%";
             //document.getElementById("im4").style.height = "100%";
         }
@@ -3097,6 +3101,7 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_5");
             img.id = "im5";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             //  document.getElementById("im5").style.width = "100%";
             // document.getElementById("im5").style.height = "100%";
         }
