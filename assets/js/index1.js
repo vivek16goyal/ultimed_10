@@ -3106,9 +3106,9 @@ function multimplyimage(imageURI) {
             // document.getElementById("im5").style.height = "100%";
         }
     }
-    //if (count == 5) {
-    //    count = 0;
-    //}
+    if (count == 5) {
+        count = 0;
+    }
 
 }
 function fun_AddItemInCart() {
