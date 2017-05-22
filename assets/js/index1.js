@@ -3025,8 +3025,10 @@ function multimplyimage(imageURI) {
     var image = smallImage.src;
    
     //image 1
-    if (smallImage.src.indexOf("No_image.png") < 0) {
-        if (document.getElementById('sel_image').src == "") {
+    if (smallImage.src.indexOf("No_image.png") < 0  ) 
+    {
+         if (document.getElementById('sel_image').src != "") 
+        {
             {
                 $("#cart-pre").show();
                 $("#lbl-cart-pre").show()
@@ -3416,7 +3418,7 @@ function SaveOrder() {
                            // var i ;
                             // parseInt( i );
 
-                          if (smallImage.src.indexOf("No_image.png") < 0)
+                         // if (smallImage.src.indexOf("No_image.png") < 0)
                             {
                             
                             {
