@@ -3055,8 +3055,6 @@ function multimplyimage(imageURI) {
             img.id = "im1";
             src.appendChild(img);
             document.getElementById('sel_image').src = "";
-            var smallImage = document.getElementById('sel_image');
-            smallImage.src = "assets/img/No_image.png";
             // document.getElementById("im1").style.width = "100%";
             //document.getElementById("im1").style.height = "100%";
         }
@@ -3068,8 +3066,6 @@ function multimplyimage(imageURI) {
             img.id = "im2";
             src.appendChild(img);
             document.getElementById('sel_image').src = "";
-            var smallImage = document.getElementById('sel_image');
-            smallImage.src = "assets/img/No_image.png";
             // document.getElementById("im2").style.width = "100%";
             // document.getElementById("im2").style.height = "100%";
         }
@@ -3082,8 +3078,6 @@ function multimplyimage(imageURI) {
             img.id = "im3";
             src.appendChild(img);
             document.getElementById('sel_image').src = "";
-            var smallImage = document.getElementById('sel_image');
-            smallImage.src = "assets/img/No_image.png";
             //  document.getElementById("im3").style.width = "100%";
             // document.getElementById("im3").style.height = "100%";
         }
@@ -3096,8 +3090,6 @@ function multimplyimage(imageURI) {
             img.id = "im4";
             src.appendChild(img);
             document.getElementById('sel_image').src = "";
-            var smallImage = document.getElementById('sel_image');
-            smallImage.src = "assets/img/No_image.png";
             // document.getElementById("im4").style.width = "100%";
             //document.getElementById("im4").style.height = "100%";
         }
@@ -3110,8 +3102,6 @@ function multimplyimage(imageURI) {
             img.id = "im5";
             src.appendChild(img);
             document.getElementById('sel_image').src = "";
-            var smallImage = document.getElementById('sel_image');
-            smallImage.src = "assets/img/No_image.png";
             //  document.getElementById("im5").style.width = "100%";
             // document.getElementById("im5").style.height = "100%";
         }
@@ -3445,34 +3435,34 @@ function SaveOrder() {
                                 //if (count ==1) {
                                 //image 2
                                // var vr = vrno1 + "_01";
-                               //     var imageURI1 = localStorage.getItem("ImagePath1");
+                                    var imageURI1 = localStorage.getItem("ImagePath1");
                                     
-                               //     var vr = vrno1 + "_1";
-                               //     send(imageURI1, vr, "");
-                               //    //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
-                               // //}
-                               // //if (count == 2) {
-                               // //    //image 3
-                               //     var imageURI2 = localStorage.getItem("ImagePath2");
-                               //     var vr2 = vrno1 + "_2";
-                               // //    var vrno2 = data.vrno + "_02";
-                               //      send(imageURI2, vr2, "");
-                               // // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
-                               // //}
-                               // //if (count == 3 ){
-                               // //    //image 4
-                               //     var imageURI3 = localStorage.getItem("ImagePath3");
-                               //     var vr1 = vrno1 + "_3";
-                               // //    var vrno3 = data.vrno + "_03";
-                               //    send(imageURI3, vr1, "");
-                               //// SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
-                               // //}
-                               // //if(count==4){
-                               // //    //image 5
-                               //     var imageURI4 = localStorage.getItem("ImagePath4");
-                               // //var vrno4 = data.vrno + "_04";
-                               //     var vr5 = vrno1 + "_4";
-                               //      send(imageURI4, vr5, "");
+                                    var vr = vrno1 + "_1";
+                                    filename= send(imageURI1, vr, "");
+                                   //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
+                                //}
+                                //if (count == 2) {
+                                //    //image 3
+                                    var imageURI2 = localStorage.getItem("ImagePath2");
+                                    var vr2 = vrno1 + "_2";
+                                //    var vrno2 = data.vrno + "_02";
+                                    filename = send(imageURI2, vr2, "");
+                                // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
+                                //}
+                                //if (count == 3 ){
+                                //    //image 4
+                                    var imageURI3 = localStorage.getItem("ImagePath3");
+                                    var vr1 = vrno1 + "_3";
+                                //    var vrno3 = data.vrno + "_03";
+                                   filename = send(imageURI3, vr1, "");
+                               // SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
+                                //}
+                                //if(count==4){
+                                //    //image 5
+                                    var imageURI4 = localStorage.getItem("ImagePath4");
+                                //var vrno4 = data.vrno + "_04";
+                                    var vr5 = vrno1 + "_4";
+                                    filename = send(imageURI4, vr5, "");
                                   //   SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                                 //}
                         }
