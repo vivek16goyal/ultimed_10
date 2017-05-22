@@ -3428,7 +3428,7 @@ function SaveOrder() {
                            // var i ;
                             // parseInt( i );
 
-                           // if (smallImage.src.indexOf("No_image.png") < 0)
+                            if (smallImage.src.indexOf("No_image.png") < 0)
                             {
                             
                             {
