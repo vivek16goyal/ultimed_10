@@ -3042,7 +3042,8 @@ function multimplyimage(imageURI) {
     //    count = parseInt(count) + 1;
     //}
     //image 1
-    if (smallImage.src.indexOf("No_image.png") < 0) {
+    if (smallImage.src.indexOf("No_image.png") < 0)
+    {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
         count = parseInt(count) + 1;
@@ -3418,7 +3419,7 @@ function SaveOrder() {
                            // var i ;
                             // parseInt( i );
 
-                            if (smallImage.src.indexOf("No_image.png") < 0)
+                           if (smallImage.src.indexOf("No_image.png") < 0)
                             {
                             
                             {
@@ -3428,8 +3429,10 @@ function SaveOrder() {
                                     //image 1
                                     var vrno1 = data.vrno;
                                     var imageURI = localStorage.getItem("ImagePath");
-                                    filename = send(imageURI, data.vrno, "");
-                                  //  SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                                    if (imageURI != null) {
+                                        filename = send(imageURI, data.vrno, "");
+                                        // SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                                    }
                                 }
                                 
                                 //if (count ==1)
@@ -3437,9 +3440,10 @@ function SaveOrder() {
                                 //image 2
                                // var vr = vrno1 + "_01";
                                     var imageURI1 = localStorage.getItem("ImagePath1");
-                                    
-                                    var vr = vrno1 + "_1";
-                                    filename1= send(imageURI1, vr, "");
+                                    if (imageURI1 != null) {
+                                        var vr = vrno1 + "_1";
+                                        filename1 = send(imageURI1, vr, "");
+                                    }
                                    //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
                                     //
                                 }
@@ -3447,19 +3451,24 @@ function SaveOrder() {
                                 {
                                 //    //image 3
                                     var imageURI2 = localStorage.getItem("ImagePath2");
-                                    var vr2 = vrno1 + "_2";
-                                //    var vrno2 = data.vrno + "_02";
-                                    filename2 = send(imageURI2, vr2, "");
+                                    if (imageURI2 != null) {
+                                        var vr2 = vrno1 + "_2";
+                                        //    var vrno2 = data.vrno + "_02";
+                                        filename2 = send(imageURI2, vr2, "");
+                                    }
                                 // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
                                     //
                                 }
                                 //if (count == 3 )
                                 {
-                                //    //image 4
+                                    //    //image 4
+
                                     var imageURI3 = localStorage.getItem("ImagePath3");
-                                    var vr1 = vrno1 + "_3";
-                                //    var vrno3 = data.vrno + "_03";
-                                   filename3 = send(imageURI3, vr1, "");
+                                    if (imageURI3 != null) {
+                                        var vr1 = vrno1 + "_3";
+                                        //    var vrno3 = data.vrno + "_03";
+                                        filename3 = send(imageURI3, vr1, "");
+                                    }
                                // SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
                                     //
                                 }
@@ -3467,9 +3476,11 @@ function SaveOrder() {
                                 {
                                 //    //image 5
                                     var imageURI4 = localStorage.getItem("ImagePath4");
-                                //var vrno4 = data.vrno + "_04";
-                                    var vr5 = vrno1 + "_4";
-                                    filename4 = send(imageURI4, vr5, "");
+                                    //var vrno4 = data.vrno + "_04";
+                                    if (imageURI != null) {
+                                        var vr5 = vrno1 + "_4";
+                                        filename4 = send(imageURI4, vr5, "");
+                                    }
                                   //   SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                                     //
                                 }
@@ -3485,18 +3496,19 @@ function SaveOrder() {
                             //filename1 = send(imageURI1, vr, "");
                            
                            {
-                                document.getElementById('Img_1').src = "";
-                                document.getElementById('Img_2').src = "";
-                                document.getElementById('Img_3').src = "";
+                                //document.getElementById('Img_1').src = "";
+                                //document.getElementById('Img_2').src = "";
+                                //document.getElementById('Img_3').src = "";
 
-                                document.getElementById('Img_4').src = "";
-                                document.getElementById('Img_5').src = "";
+                                //document.getElementById('Img_4').src = "";
+                                //document.getElementById('Img_5').src = "";
                                 localStorage.setItem("ImagePath", "")
                                 localStorage.setItem("ImagePath1", "")
                                 localStorage.setItem("ImagePath2", "")
 
                                 localStorage.setItem("ImagePath3", "")
                                 localStorage.setItem("ImagePath4", "")
+                                count == 0;
                             }
                             setTimeout(function abc() {
                                 SendNotif(vrno);
