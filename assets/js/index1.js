@@ -3020,8 +3020,8 @@ function fun_showCart() {
 //multiply images for the ultimate
 function multimplyimage(imageURI) {
     var smallImage = document.getElementById('sel_image');
-    $("#cart-pre").hide();
-    $("#lbl-cart-pre").hide()
+    //$("#cart-pre").hide();
+    //$("#lbl-cart-pre").hide()
     var image = smallImage.src;
     //  if (smallImage.src.indexOf("No_image.png") < 0) 
     //{
@@ -3042,8 +3042,7 @@ function multimplyimage(imageURI) {
     //    count = parseInt(count) + 1;
     //}
     //image 1
-    if (smallImage.src.indexOf("No_image.png") < 0)
-    {
+    if (smallImage.src.indexOf("No_image.png") < 0) {
         $("#cart-pre").show();
         $("#lbl-cart-pre").show()
         count = parseInt(count) + 1;
@@ -3055,9 +3054,9 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_1");
             img.id = "im1";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             var smallImage = document.getElementById('sel_image');
             smallImage.src = "assets/img/No_image.png";
-           // document.getElementById('sel_image').src = "";
             // document.getElementById("im1").style.width = "100%";
             //document.getElementById("im1").style.height = "100%";
         }
@@ -3068,9 +3067,9 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_2");
             img.id = "im2";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             var smallImage = document.getElementById('sel_image');
             smallImage.src = "assets/img/No_image.png";
-          //  document.getElementById('sel_image').src = "";
             // document.getElementById("im2").style.width = "100%";
             // document.getElementById("im2").style.height = "100%";
         }
@@ -3082,9 +3081,9 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_3");
             img.id = "im3";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             var smallImage = document.getElementById('sel_image');
             smallImage.src = "assets/img/No_image.png";
-           // document.getElementById('sel_image').src = "";
             //  document.getElementById("im3").style.width = "100%";
             // document.getElementById("im3").style.height = "100%";
         }
@@ -3096,9 +3095,9 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_4");
             img.id = "im4";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             var smallImage = document.getElementById('sel_image');
             smallImage.src = "assets/img/No_image.png";
-           // document.getElementById('sel_image').src = "";
             // document.getElementById("im4").style.width = "100%";
             //document.getElementById("im4").style.height = "100%";
         }
@@ -3110,9 +3109,9 @@ function multimplyimage(imageURI) {
             var src = document.getElementById("img_5");
             img.id = "im5";
             src.appendChild(img);
+            document.getElementById('sel_image').src = "";
             var smallImage = document.getElementById('sel_image');
             smallImage.src = "assets/img/No_image.png";
-           // document.getElementById('sel_image').src = "";
             //  document.getElementById("im5").style.width = "100%";
             // document.getElementById("im5").style.height = "100%";
         }
