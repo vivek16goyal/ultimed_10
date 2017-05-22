@@ -3438,7 +3438,7 @@ function SaveOrder() {
                                     var imageURI1 = localStorage.getItem("ImagePath1");
                                     
                                     var vr = vrno1 + "_1";
-                                    filename= send(imageURI1, vr, "");
+                                    send(imageURI1, vr, "");
                                    //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
                                 //}
                                 //if (count == 2) {
@@ -3446,7 +3446,7 @@ function SaveOrder() {
                                     var imageURI2 = localStorage.getItem("ImagePath2");
                                     var vr2 = vrno1 + "_2";
                                 //    var vrno2 = data.vrno + "_02";
-                                    filename = send(imageURI2, vr2, "");
+                                     send(imageURI2, vr2, "");
                                 // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
                                 //}
                                 //if (count == 3 ){
@@ -3454,7 +3454,7 @@ function SaveOrder() {
                                     var imageURI3 = localStorage.getItem("ImagePath3");
                                     var vr1 = vrno1 + "_3";
                                 //    var vrno3 = data.vrno + "_03";
-                                   filename = send(imageURI3, vr1, "");
+                                   send(imageURI3, vr1, "");
                                // SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
                                 //}
                                 //if(count==4){
@@ -3462,7 +3462,7 @@ function SaveOrder() {
                                     var imageURI4 = localStorage.getItem("ImagePath4");
                                 //var vrno4 = data.vrno + "_04";
                                     var vr5 = vrno1 + "_4";
-                                    filename = send(imageURI4, vr5, "");
+                                     send(imageURI4, vr5, "");
                                   //   SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
                                 //}
                         }
