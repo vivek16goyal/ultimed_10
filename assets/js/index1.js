@@ -3511,7 +3511,8 @@ function SaveOrder() {
                                 //document.getElementById('Img_3').src = "";
 
                                 //document.getElementById('Img_4').src = "";
-                                //document.getElementById('Img_5').src = "";
+                               //document.getElementById('Img_5').src = "";
+                               count == 0;
                                 localStorage.setItem("ImagePath", "")
                                 localStorage.setItem("ImagePath1", "")
                                 localStorage.setItem("ImagePath2", "")
