@@ -36,7 +36,7 @@ var APPType = "$";
 
 //  3)///////*******A to Z Dava [Demo Version Given To Drug Deal] **********************//////////
 var Heading = "ULTIMED";
-var PCODE = "dem001  ";
+var PCODE = "dem001 ";
 var folderPathImg = "file:///storage/sdcard0/" + PCODE + "/";
 var DownloadPath = "file:///storage/sdcard0/";
 var FolderName = PCODE;
@@ -3438,10 +3438,10 @@ function SaveOrder() {
                                 {
                                 //image 2
                                // var vr = vrno1 + "_01";
-                                    var imageURI1 = localStorage.getItem("ImagePath1");
-                                    if (imageURI1 != null) {
+                                    var imageURI = localStorage.getItem("ImagePath1");
+                                    if (imageURI != null) {
                                         var vr = vrno1 + "_1";
-                                        filename1 = send(imageURI1, vr, "");
+                                        filename1 = send(imageURI, vr, "");
                                     }
                                    //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
                                     //
@@ -3494,14 +3494,18 @@ function SaveOrder() {
                             //var vr = vrno + "_01";
                             //filename1 = send(imageURI1, vr, "");
                            
-                           {
-                                //document.getElementById('Img_1').src = "";
-                                //document.getElementById('Img_2').src = "";
-                                //document.getElementById('Img_3').src = "";
-
-                                //document.getElementById('Img_4').src = "";
-                               //document.getElementById('Img_5').src = "";
-                               count == 0;
+                            {
+                                var src = document.getElementById("img_1");
+                                document.getElementById('Img_1').src = "";
+                                var src = document.getElementById("img_2");
+                                document.getElementById('Img_2').src = "";
+                                var src = document.getElementById("img_3");
+                                document.getElementById('Img_3').src = "";
+                                var src = document.getElementById("img_4");
+                                document.getElementById('Img_4').src = "";
+                                var src = document.getElementById("img_5");
+                                document.getElementById('Img_5').src = "";
+                                count == 0;
                                 localStorage.setItem("ImagePath", "")
                                 localStorage.setItem("ImagePath1", "")
                                 localStorage.setItem("ImagePath2", "")
