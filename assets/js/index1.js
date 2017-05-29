@@ -36,7 +36,7 @@ var APPType = "$";
 
 //  3)///////*******A to Z Dava [Demo Version Given To Drug Deal] **********************//////////
 var Heading = "ULTIMED";
-var PCODE = "01437_ ";
+var PCODE = "ndcda";
 var folderPathImg = "file:///storage/sdcard0/" + PCODE + "/";
 var DownloadPath = "file:///storage/sdcard0/";
 var FolderName = PCODE;
@@ -1885,7 +1885,8 @@ function Register() {
             city = localStorage.getItem("Ctcode");
         }
         var area = $("#selArea").val();
-        if (localStorage.getItem("Acode") != "" && localStorage.getItem("Acode") != null) {
+        if (localStorage.getItem("Acode") != "" && localStorage.getItem("Acode") != null)
+        {
             area = localStorage.getItem("Acode");
         }
         var WebSerUrl = localStorage.getItem("APIURL");
@@ -2368,30 +2369,32 @@ function onPhotoURISuccess(imageURI) {  ///////////
     window.location.href = "#ImageSelect";
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;
+    document.getElementById('Img16').src = imageURI;
+    localStorage.setItem("ImagePath", imageURI);
   //  count = count + 1;
-    if (count == 0) {
-        document.getElementById('Img16').src = imageURI;
-        localStorage.setItem("ImagePath", imageURI);
-    }
-    if (count == 1) {
-        document.getElementById('Img15').src = imageURI;
-        localStorage.setItem("ImagePath1", imageURI);
-    }
-    if (count == 2) {
-        document.getElementById('Img19').src = imageURI;
-        localStorage.setItem("ImagePath2", imageURI);
-    }
-    if (count == 3) {
-        document.getElementById('Img20').src = imageURI;
-        localStorage.setItem("ImagePath3", imageURI);
-    }
-    if (count == 4) {
-        document.getElementById('Img21').src = imageURI;
-        localStorage.setItem("ImagePath4", imageURI);
-    }
-    if (count == 5) {
-        count == 0;
-    }
+    //if (count == 0) {
+    //    document.getElementById('Img16').src = imageURI;
+    //    localStorage.setItem("ImagePath", imageURI);
+    //}
+    //if (count == 1) {
+    //    document.getElementById('Img15').src = imageURI;
+    //    localStorage.setItem("ImagePath1", imageURI);
+    //}
+    //if (count == 2) {
+    //    document.getElementById('Img19').src = imageURI;
+    //    localStorage.setItem("ImagePath2", imageURI);
+    //}
+    //if (count == 3) {
+    //    document.getElementById('Img20').src = imageURI;
+    //    localStorage.setItem("ImagePath3", imageURI);
+    //}
+    //if (count == 4) {
+    //    document.getElementById('Img21').src = imageURI;
+    //    localStorage.setItem("ImagePath4", imageURI);
+    //}
+    //if (count == 5) {
+    //    count == 0;
+    //}
     // localStorage.setItem("ImagePath", imageURI);
 
 
@@ -2403,22 +2406,24 @@ function onPhotoDataSuccess(imageURI) {  ///////////////
     window.location.href = "#ImageSelect";
     var smallImage = document.getElementById('sel_image');
     smallImage.src = imageURI;
+    document.getElementById('Img16').src = imageURI;
+    localStorage.setItem("ImagePath", imageURI);
     //count = count + 1;
-    if (count == 0) {
-        document.getElementById('Img16').src = imageURI;
-    }
-    if (count == 1) {
-        document.getElementById('Img15').src = imageURI;
-    }
-    if (count == 2) {
-        document.getElementById('Img19').src = imageURI;
-    }
-    if (count == 3) {
-        document.getElementById('Img20').src = imageURI;
-    }
-    if (count == 4) {
-        document.getElementById('Img21').src = imageURI;
-    }
+    //if (count == 0) {
+    //    document.getElementById('Img16').src = imageURI;
+    //}
+    //if (count == 1) {
+    //    document.getElementById('Img15').src = imageURI;
+    //}
+    //if (count == 2) {
+    //    document.getElementById('Img19').src = imageURI;
+    //}
+    //if (count == 3) {
+    //    document.getElementById('Img20').src = imageURI;
+    //}
+    //if (count == 4) {
+    //    document.getElementById('Img21').src = imageURI;
+    //}
     // localStorage.setItem("ImagePath", imageURI);
 
     //movePic(imageURI);
@@ -3004,16 +3009,16 @@ function fun_nextItem() {
 function fun_showCart() {
     fun_AddItemInCart();
     var smallImage = document.getElementById('sel_image');
-    multimplyimage();
-    //var image = smallImage.src;
-    //if (smallImage.src.indexOf("No_image.png") < 0) {        
-    //    document.getElementById("cart-pre").src = image;
-    //    $("#cart-pre").show();
-    //    $("#lbl-cart-pre").show();
-    //} else {
-    //    $("#cart-pre").hide();
-    //    $("#lbl-cart-pre").hide();
-    //}
+  //  multimplyimage();
+    var image = smallImage.src;
+    if (smallImage.src.indexOf("No_image.png") < 0) {        
+        document.getElementById("cart-pre").src = image;
+        $("#cart-pre").show();
+        $("#lbl-cart-pre").show();
+    } else {
+        $("#cart-pre").hide();
+        $("#lbl-cart-pre").hide();
+    }
     window.location.href = "#Item-cart";
 }
 
@@ -3364,12 +3369,8 @@ function chenregistration() {
 function SaveOrder() {
     //loadmsg = "Saving Data...";
     // $(".show-page-loading-msg").click();
-    var smallImage = document.getElementById('sel_image');
-    count == 0;
-    var image = smallImage.src;
 
-    //img.src = api + "/VrImg/img_app/" + img1 + "";
-    //         var src = document.getElementById("img01");
+
 
     if ($("#del-area").val().trim() == "" || $("#del-area").val() == "null") {
         $("#a-msg").show();
@@ -3408,112 +3409,17 @@ function SaveOrder() {
                             ShowErrorFromServer(data.pcode);
                         }
                         else {
-                            debugger;
                             var filename = "";
                             var smallImage = document.getElementById('sel_image');
                             var image = smallImage.src;
-                            var vrno_temp = {
-                                vrno: data.vrno 
+                            if (smallImage.src.indexOf("No_image.png") < 0) {
+                                var imageURI = localStorage.getItem("ImagePath");
+                                filename = send(imageURI, data.vrno, "");
                             }
-                           // var i ;
-                            // parseInt( i );
-
-                       //   if (smallImage.src.indexOf("No_image.png") < 0)
-                            {
-                            
-                            {
-                               
-                           
-                                {
-                                    //image 1
-                                    var vrno1 = data.vrno;
-                                    var imageURI = localStorage.getItem("ImagePath");
-                                    if (imageURI != null) {
-                                        filename = send(imageURI, data.vrno, "");
-                                        // SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
-                                    }
-                                }
-                                
-                                //if (count ==1)
-                                {
-                                //image 2
-                               // var vr = vrno1 + "_01";
-                                    var imageURI = localStorage.getItem("ImagePath1");
-                                    if (imageURI != null) {
-                                        var vr = vrno1 + "_1";
-                                        filename1 = send(imageURI, vr, "");
-                                    }
-                                   //SaveOrderinGBC(data.vrno, filename1, data.TotalAmt);
-                                    //
-                                }
-                                //if (count == 2) 
-                                {
-                                //    //image 3
-                                    var imageURI2 = localStorage.getItem("ImagePath2");
-                                    if (imageURI2 != null) {
-                                        var vr2 = vrno1 + "_2";
-                                        //    var vrno2 = data.vrno + "_02";
-                                        filename2 = send(imageURI2, vr2, "");
-                                    }
-                                // SaveOrderinGBC(data.vrno, filename2, data.TotalAmt);
-                                    //
-                                }
-                                //if (count == 3 )
-                                {
-                                    //    //image 4
-
-                                    var imageURI3 = localStorage.getItem("ImagePath3");
-                                    if (imageURI3 != null) {
-                                        var vr1 = vrno1 + "_3";
-                                        //    var vrno3 = data.vrno + "_03";
-                                        filename3 = send(imageURI3, vr1, "");
-                                    }
-                               // SaveOrderinGBC(data.vrno, filename3, data.TotalAmt);
-                                    //
-                                }
-                                //if(count==4)
-                                {
-                                //    //image 5
-                                    var imageURI4 = localStorage.getItem("ImagePath4");
-                                    //var vrno4 = data.vrno + "_04";
-                                    if (imageURI != null) {
-                                        var vr5 = vrno1 + "_4";
-                                        filename4 = send(imageURI4, vr5, "");
-                                    }
-                                  //   SaveOrderinGBC(data.vrno, filename4, data.TotalAmt);
-                                    //
-                                }
-                        }
-                    }
                             debugger;
-                           SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
-                             SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
+                            SaveOrderinGBC(data.vrno, filename, data.TotalAmt);
+                            SetVrDeetail(data.vrno, data.TotalAmt, data.pcode, data.items);
                             var vrno = data.vrno;
-                            //var imageURI1 = localStorage.getItem("ImagePath1");
-                            //var vrno1 = data.vrno;
-                            //var vr = vrno + "_01";
-                            //filename1 = send(imageURI1, vr, "");
-                           
-                            {
-                                var src = document.getElementById("img_1");
-                                document.getElementById('Img_1').src = "";
-                                var src = document.getElementById("img_2");
-                                document.getElementById('Img_2').src = "";
-                                var src = document.getElementById("img_3");
-                                document.getElementById('Img_3').src = "";
-                                var src = document.getElementById("img_4");
-                                document.getElementById('Img_4').src = "";
-                                var src = document.getElementById("img_5");
-                                document.getElementById('Img_5').src = "";
-                                count == 0;
-                                localStorage.setItem("ImagePath", "")
-                                localStorage.setItem("ImagePath1", "")
-                                localStorage.setItem("ImagePath2", "")
-
-                                localStorage.setItem("ImagePath3", "")
-                                localStorage.setItem("ImagePath4", "")
-                                count == 0;
-                            }
                             setTimeout(function abc() {
                                 SendNotif(vrno);
                             }, 7000);
@@ -3523,28 +3429,17 @@ function SaveOrder() {
                     else {
                         alert("Save Failed. Please Try Again!!!");
                     }
-                  //  $("#progress").val(75);
-                },
-                select: function (event, ui) {
-                    debugger;
-                    localStorage.setItem("label_vrno", ui.data.vrno)
-                   // var wrate = ui.data.vrno;
+                    $("#progress").val(75);
                 },
                 error: function (xmlHttpRequest, textStatus, errorThrown) {
                     $(".hide-page-loading-msg").click();
                     alert("Please Try Again!!!" + xmlHttpRequest.responseText);
                     $("#ordSaveprog").hide();
                     $(".parentDisable").hide();
-                },
-                
+                }
             });
         }
     }
-
-    if(count==5){
-        
-        count==0;}
-
 }
 
 

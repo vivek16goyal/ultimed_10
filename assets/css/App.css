@@ -4,12 +4,12 @@
 
 .theme-color >.jqm-demos >.jqm-header
 {
-    background-color:#253e5a!important;
+    background-color:#1490ce!important;
 }
 
 .theme-color >.jqm-demos >.my-footer
 {
-    background-color:#253e5a!important;
+    background-color:#1490ce!important;
 }
 
 
@@ -19,7 +19,7 @@
 }
 .theme-color-green
 {
-    background-color:#253e5a!important;
+    background-color:#1490ce!important;
      box-shadow: 0px 3px 5px #bbbdbb;
 }
 
@@ -31,7 +31,7 @@
 
 .theme-color-txt
 {
-    color:#253e5a!important;
+    color:#1490ce!important;
 }
 
 .theme-color-txt-red
@@ -84,7 +84,7 @@
  background-color:#1390cf;
  padding:10px;
  border-radius:50px;
- box-shadow:#253e5a 5px 5px 10px;
+ box-shadow:#1490ce 5px 5px 10px;
 }
     .track-img img
     {
@@ -132,7 +132,7 @@
 
 .pro-img1
 {
-     position:absolute;top:120px; padding: 10px; background-color: #253e5a; border-radius: 40px;width:25px;
+     position:absolute;top:120px; padding: 10px; background-color: #1490ce; border-radius: 40px;width:25px;
 }
 
     .pro-menutd
@@ -461,7 +461,7 @@ display:none;
 	margin: 0 0 .625em;
 }
 .jqm-demos .jqm-content > h2 {
-	color: #253e5a;
+	color: #1490ce;
 	background-color: transparent;
 	border-bottom: 1px solid #ddd;
 	font-size: 1.6em;
@@ -469,7 +469,7 @@ display:none;
 	margin: 0 0 .7375em;
 }
 .jqm-demos .jqm-content > h3 {
-	color: #253e5a;
+	color: #1490ce;
 	background-color: transparent;
 	font-size: 1.4em;
 	margin: 0 0 1em;
@@ -589,7 +589,7 @@ display:none;
 .jqm-block-content h3 {
 	font-size: 1.5em;
 	font-weight: 300;
-	color: #253e5a;
+	color: #1490ce;
 	border-bottom: 1px solid #ddd;
 	padding-bottom: .25em;
 	margin: 0 0 .5em;
@@ -645,7 +645,7 @@ display:none;
 	color: #fff;
 }
 .jqm-demos .jqm-list .ui-li-divider {
-	color: #253e5a;
+	color: #1490ce;
 }
 
 /* Navmenu */
@@ -743,7 +743,7 @@ display:none;
 .jqm-demos .jqm-content .jqm-view-source-link:visited,
 .jqm-demos .jqm-content .jqm-view-source-link:hover,
 .jqm-demos .jqm-content .jqm-view-source-link:active {
-	color: #253e5a;
+	color: #1490ce;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	margin: 2em 0 1.5em 1em;
@@ -946,10 +946,10 @@ display:none;
 .jqm-view-source .ui-btn.ui-btn-e:hover,
 .jqm-view-source .ui-btn.ui-btn-e:active,
 .jqm-view-source .ui-btn.ui-btn-e.ui-btn-active {
-	background: #253e5a;
-	border-color: #253e5a;
+	background: #1490ce;
+	border-color: #1490ce;
 	color: #fff;
-	text-shadow: 0 1px 0 #253e5a;
+	text-shadow: 0 1px 0 #1490ce;
 }
 /* Button F - CSS */
 .jqm-view-source .ui-btn.ui-btn-f,
@@ -1081,7 +1081,7 @@ display:none;
 	background-color: transparent;
 }
 .syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
-	background-color: #253e5a;
+	background-color: #1490ce;
 }
 .syntaxhighlighter .line.highlighted.number {
 	color: #38566f;
@@ -1109,7 +1109,7 @@ display:none;
 	color: #5ba1cf;
 }
 .syntaxhighlighter .string {
-	color: #253e5a;
+	color: #1490ce;
 }
 .syntaxhighlighter .string a {
 	color: #1dc116;
@@ -1121,13 +1121,13 @@ display:none;
 	color: #8aa6c1;
 }
 .syntaxhighlighter .variable {
-	color: #253e5a;
+	color: #1490ce;
 }
 .syntaxhighlighter .value {
 	color: #f7e741;
 }
 .syntaxhighlighter .functions {
-	color: #253e5a;
+	color: #1490ce;
 }
 .syntaxhighlighter .constants {
 	color: #e0e8ff;
@@ -1147,7 +1147,7 @@ display:none;
 	color: white;
 }
 .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
-	color: #253e5a;
+	color: #1490ce;
 }
 .syntaxhighlighter table td.code {
 	cursor: text;
